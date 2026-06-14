@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260">
+  <defs>
+    <linearGradient id="gbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8F5E9"/>
+      <stop offset="100%" stop-color="#C8E6C9"/>
+    </linearGradient>
+    <linearGradient id="starGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFE57F"/>
+      <stop offset="100%" stop-color="#FFB300"/>
+    </linearGradient>
+    <linearGradient id="boardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#37474F"/>
+      <stop offset="100%" stop-color="#1C313A"/>
+    </linearGradient>
+    <linearGradient id="frameGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8D6E63"/>
+      <stop offset="100%" stop-color="#5D4037"/>
+    </linearGradient>
+    <filter id="gshadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="4" dy="7" stdDeviation="5" flood-color="rgba(0,0,0,0.3)"/>
+    </filter>
+    <filter id="starGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#FFD54F" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="260" fill="url(#gbg)" rx="16"/>
+  <ellipse cx="200" cy="120" rx="160" ry="100" fill="#A5D6A7" opacity="0.2"/>
+
+  <!-- ===== Chalkboard ===== -->
+  <g transform="translate(75, 35)" filter="url(#gshadow)">
+    <!-- Wooden frame -->
+    <rect x="0" y="0" width="250" height="170" rx="6" fill="url(#frameGrad)"/>
+    <!-- Chalkboard surface -->
+    <rect x="10" y="10" width="230" height="140" rx="3" fill="url(#boardGrad)"/>
+    <!-- Chalk tray -->
+    <rect x="5" y="162" width="240" height="8" rx="3" fill="#4E342E"/>
+
+    <!-- Chalk text on board -->
+    <text x="115" y="42" font-family="Arial,sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="rgba(255,255,255,0.85)">How To Use</text>
+    <line x1="18" y1="50" x2="212" y2="50" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+
+    <!-- Step 1 -->
+    <circle cx="32" cy="70" r="10" fill="#66BB6A" opacity="0.9"/>
+    <text x="32" y="75" font-family="Arial Black,sans-serif" font-size="11" font-weight="900" text-anchor="middle" fill="white">1</text>
+    <text x="50" y="75" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="rgba(255,255,255,0.85)">Open a letter lesson</text>
+
+    <!-- Step 2 -->
+    <circle cx="32" cy="100" r="10" fill="#42A5F5" opacity="0.9"/>
+    <text x="32" y="105" font-family="Arial Black,sans-serif" font-size="11" font-weight="900" text-anchor="middle" fill="white">2</text>
+    <text x="50" y="105" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="rgba(255,255,255,0.85)">Tap to hear sounds</text>
+
+    <!-- Step 3 -->
+    <circle cx="32" cy="130" r="10" fill="#FF7043" opacity="0.9"/>
+    <text x="32" y="135" font-family="Arial Black,sans-serif" font-size="11" font-weight="900" text-anchor="middle" fill="white">3</text>
+    <text x="50" y="135" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="rgba(255,255,255,0.85)">Answer the quiz!</text>
+
+    <!-- Chalk eraser smear effect -->
+    <rect x="165" y="120" width="40" height="18" rx="3" fill="rgba(255,255,255,0.06)" transform="rotate(-3, 185, 129)"/>
+  </g>
+
+  <!-- Big star badge top-right -->
+  <g transform="translate(298, 22)" filter="url(#starGlow)">
+    <polygon points="40,0 49,30 80,30 55,48 64,80 40,62 16,80 25,48 0,30 31,30"
+             fill="url(#starGrad)" stroke="#FFB300" stroke-width="1"/>
+    <text x="40" y="44" font-family="Arial Black,sans-serif" font-size="11" font-weight="900" text-anchor="middle" fill="#5D4037">TIP!</text>
+  </g>
+
+  <!-- Small stars scattered -->
+  <g fill="#FFD54F" opacity="0.6">
+    <polygon points="25,95 27,89 29,95 35,95 30,99 32,105 27,101 22,105 24,99 19,95" transform="scale(0.65) translate(-10,80)"/>
+    <polygon points="25,95 27,89 29,95 35,95 30,99 32,105 27,101 22,105 24,99 19,95" transform="scale(0.5) translate(680,320)"/>
+    <polygon points="25,95 27,89 29,95 35,95 30,99 32,105 27,101 22,105 24,99 19,95" transform="scale(0.6) translate(30,350)"/>
+  </g>
+
+  <!-- Pencil decoration -->
+  <g transform="translate(26, 145)" opacity="0.85">
+    <rect x="0" y="0" width="12" height="70" rx="3" fill="#FFCA28"/>
+    <polygon points="0,70 12,70 6,88" fill="#FFAB40"/>
+    <polygon points="2,80 10,80 6,88" fill="#424242"/>
+    <rect x="0" y="0" width="12" height="8" rx="3" fill="#EF9A9A"/>
+    <rect x="1" y="8" width="10" height="3" fill="#B0BEC5"/>
+  </g>
+
+  <text x="200" y="248" font-family="Arial,sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#2E7D32" opacity="0.8">Step-by-Step Guide</text>
+</svg>

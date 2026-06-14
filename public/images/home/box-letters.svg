@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8F4FD"/>
+      <stop offset="100%" stop-color="#D0E8FF"/>
+    </linearGradient>
+    <linearGradient id="lA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF7043"/>
+      <stop offset="100%" stop-color="#BF360C"/>
+    </linearGradient>
+    <linearGradient id="lB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#42A5F5"/>
+      <stop offset="100%" stop-color="#1565C0"/>
+    </linearGradient>
+    <linearGradient id="lC" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFCA28"/>
+      <stop offset="100%" stop-color="#E65100"/>
+    </linearGradient>
+    <linearGradient id="lD" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#66BB6A"/>
+      <stop offset="100%" stop-color="#1B5E20"/>
+    </linearGradient>
+    <linearGradient id="lE" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#AB47BC"/>
+      <stop offset="100%" stop-color="#4A148C"/>
+    </linearGradient>
+    <filter id="s3d" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="4" dy="7" stdDeviation="5" flood-color="rgba(0,0,0,0.3)"/>
+    </filter>
+    <radialGradient id="glow" cx="50%" cy="40%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="260" fill="url(#bg)" rx="16"/>
+  <!-- Soft radial glow center -->
+  <ellipse cx="200" cy="120" rx="180" ry="120" fill="white" opacity="0.25"/>
+
+  <!-- Sparkles -->
+  <g fill="#FFE57F" opacity="0.7">
+    <circle cx="35" cy="35" r="4"/>
+    <circle cx="38" cy="28" r="2"/>
+    <circle cx="30" cy="30" r="2"/>
+    <circle cx="360" cy="50" r="4"/>
+    <circle cx="364" cy="43" r="2"/>
+    <circle cx="356" cy="46" r="2"/>
+    <circle cx="60" cy="215" r="3"/>
+    <circle cx="340" cy="210" r="3"/>
+  </g>
+
+  <!-- Letter A block -->
+  <g transform="translate(28, 55)" filter="url(#s3d)">
+    <rect x="0" y="8" width="65" height="65" rx="10" fill="#8B2500" opacity="0.5"/>
+    <rect x="0" y="0" width="65" height="65" rx="10" fill="url(#lA)"/>
+    <rect x="0" y="0" width="65" height="30" rx="10" fill="url(#glow)"/>
+    <text x="32" y="50" font-family="Arial Black,sans-serif" font-size="44" font-weight="900" text-anchor="middle" fill="white" opacity="0.95">A</text>
+  </g>
+
+  <!-- Letter B block (raised higher) -->
+  <g transform="translate(108, 30)" filter="url(#s3d)">
+    <rect x="0" y="8" width="65" height="65" rx="10" fill="#0D3A7A" opacity="0.5"/>
+    <rect x="0" y="0" width="65" height="65" rx="10" fill="url(#lB)"/>
+    <rect x="0" y="0" width="65" height="30" rx="10" fill="url(#glow)"/>
+    <text x="32" y="50" font-family="Arial Black,sans-serif" font-size="44" font-weight="900" text-anchor="middle" fill="white" opacity="0.95">B</text>
+  </g>
+
+  <!-- Letter C block -->
+  <g transform="translate(192, 60)" filter="url(#s3d)">
+    <rect x="0" y="8" width="65" height="65" rx="10" fill="#7A3200" opacity="0.5"/>
+    <rect x="0" y="0" width="65" height="65" rx="10" fill="url(#lC)"/>
+    <rect x="0" y="0" width="65" height="30" rx="10" fill="url(#glow)"/>
+    <text x="32" y="50" font-family="Arial Black,sans-serif" font-size="44" font-weight="900" text-anchor="middle" fill="white" opacity="0.95">C</text>
+  </g>
+
+  <!-- Letter D block (raised) -->
+  <g transform="translate(270, 40)" filter="url(#s3d)">
+    <rect x="0" y="8" width="65" height="65" rx="10" fill="#0C3010" opacity="0.5"/>
+    <rect x="0" y="0" width="65" height="65" rx="10" fill="url(#lD)"/>
+    <rect x="0" y="0" width="65" height="30" rx="10" fill="url(#glow)"/>
+    <text x="32" y="50" font-family="Arial Black,sans-serif" font-size="44" font-weight="900" text-anchor="middle" fill="white" opacity="0.95">D</text>
+  </g>
+
+  <!-- Second row -->
+  <!-- Letter E -->
+  <g transform="translate(55, 145)" filter="url(#s3d)">
+    <rect x="0" y="8" width="65" height="65" rx="10" fill="#2C0550" opacity="0.5"/>
+    <rect x="0" y="0" width="65" height="65" rx="10" fill="url(#lE)"/>
+    <rect x="0" y="0" width="65" height="30" rx="10" fill="url(#glow)"/>
+    <text x="32" y="50" font-family="Arial Black,sans-serif" font-size="44" font-weight="900" text-anchor="middle" fill="white" opacity="0.95">E</text>
+  </g>
+
+  <!-- "..." dots suggesting more letters -->
+  <g transform="translate(148, 158)">
+    <circle cx="0" cy="30" r="7" fill="#FF7043" opacity="0.7"/>
+    <circle cx="26" cy="25" r="7" fill="#42A5F5" opacity="0.7"/>
+    <circle cx="52" cy="30" r="7" fill="#FFCA28" opacity="0.7"/>
+  </g>
+
+  <!-- Letter Z at end (bookend) -->
+  <g transform="translate(235, 148)" filter="url(#s3d)">
+    <rect x="0" y="8" width="65" height="65" rx="10" fill="#7A1A1A" opacity="0.5"/>
+    <rect x="0" y="0" width="65" height="65" rx="10" fill="url(#lA)"/>
+    <rect x="0" y="0" width="65" height="30" rx="10" fill="url(#glow)"/>
+    <text x="32" y="50" font-family="Arial Black,sans-serif" font-size="44" font-weight="900" text-anchor="middle" fill="white" opacity="0.95">Z</text>
+  </g>
+
+  <!-- Label at bottom -->
+  <text x="200" y="242" font-family="Arial,sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#1565C0" opacity="0.8">26 Letters · A to Z</text>
+</svg>

@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="800" height="320">
+  <defs>
+    <!-- Sky gradient -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#87CEEB"/>
+      <stop offset="100%" stop-color="#FFF8E7"/>
+    </linearGradient>
+    <!-- Ground gradient -->
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8BC34A"/>
+      <stop offset="100%" stop-color="#558B2F"/>
+    </linearGradient>
+    <!-- Letter A gradient -->
+    <linearGradient id="gradA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF6B6B"/>
+      <stop offset="100%" stop-color="#C0392B"/>
+    </linearGradient>
+    <!-- Letter B gradient -->
+    <linearGradient id="gradB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4FC3F7"/>
+      <stop offset="100%" stop-color="#0288D1"/>
+    </linearGradient>
+    <!-- Letter C gradient -->
+    <linearGradient id="gradC" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFD54F"/>
+      <stop offset="100%" stop-color="#F9A825"/>
+    </linearGradient>
+    <!-- Sun gradient -->
+    <radialGradient id="sunGrad">
+      <stop offset="0%" stop-color="#FFF176"/>
+      <stop offset="100%" stop-color="#FFB300"/>
+    </radialGradient>
+    <!-- Drop shadow filter -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="6" stdDeviation="4" flood-color="rgba(0,0,0,0.25)"/>
+    </filter>
+    <filter id="sunShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="6" flood-color="rgba(255,180,0,0.4)"/>
+    </filter>
+    <filter id="cloudFilter" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Sky background -->
+  <rect width="800" height="320" fill="url(#sky)"/>
+
+  <!-- Soft clouds -->
+  <g opacity="0.85" filter="url(#cloudFilter)">
+    <ellipse cx="120" cy="55" rx="55" ry="24" fill="white"/>
+    <ellipse cx="90" cy="62" rx="38" ry="20" fill="white"/>
+    <ellipse cx="155" cy="62" rx="35" ry="18" fill="white"/>
+  </g>
+  <g opacity="0.75" filter="url(#cloudFilter)">
+    <ellipse cx="660" cy="45" rx="50" ry="22" fill="white"/>
+    <ellipse cx="635" cy="52" rx="35" ry="18" fill="white"/>
+    <ellipse cx="690" cy="50" rx="32" ry="17" fill="white"/>
+  </g>
+  <g opacity="0.7">
+    <ellipse cx="400" cy="30" rx="40" ry="16" fill="white"/>
+    <ellipse cx="375" cy="36" rx="28" ry="14" fill="white"/>
+    <ellipse cx="428" cy="35" rx="26" ry="13" fill="white"/>
+  </g>
+
+  <!-- Sun -->
+  <g filter="url(#sunShadow)">
+    <circle cx="710" cy="70" r="38" fill="url(#sunGrad)"/>
+    <!-- Sun rays -->
+    <g stroke="#FFB300" stroke-width="3" stroke-linecap="round" opacity="0.7">
+      <line x1="710" y1="22" x2="710" y2="10"/>
+      <line x1="710" y1="118" x2="710" y2="130"/>
+      <line x1="662" y1="70" x2="650" y2="70"/>
+      <line x1="758" y1="70" x2="770" y2="70"/>
+      <line x1="676" y1="36" x2="668" y2="28"/>
+      <line x1="744" y1="104" x2="752" y2="112"/>
+      <line x1="744" y1="36" x2="752" y2="28"/>
+      <line x1="676" y1="104" x2="668" y2="112"/>
+    </g>
+    <!-- Smiley face -->
+    <circle cx="698" cy="62" r="5" fill="#E65100"/>
+    <circle cx="722" cy="62" r="5" fill="#E65100"/>
+    <path d="M698 82 Q710 94 722 82" stroke="#E65100" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Ground / grass hill -->
+  <ellipse cx="400" cy="340" rx="500" ry="90" fill="url(#ground)"/>
+  <!-- Lighter grass top -->
+  <ellipse cx="400" cy="295" rx="500" ry="30" fill="#AED581" opacity="0.6"/>
+
+  <!-- Decorative small flowers in grass -->
+  <g opacity="0.9">
+    <circle cx="80" cy="295" r="5" fill="#FF8A65"/>
+    <circle cx="80" cy="295" r="3" fill="#FFF176"/>
+    <circle cx="200" cy="300" r="4" fill="#CE93D8"/>
+    <circle cx="200" cy="300" r="2.5" fill="#FFF"/>
+    <circle cx="600" cy="298" r="5" fill="#80DEEA"/>
+    <circle cx="600" cy="298" r="3" fill="#FFF"/>
+    <circle cx="720" cy="293" r="4" fill="#FF8A65"/>
+    <circle cx="720" cy="293" r="2.5" fill="#FFF176"/>
+  </g>
+
+  <!-- ===== LETTER A ===== -->
+  <g transform="translate(170, 100)" filter="url(#shadow)">
+    <!-- 3D side of A -->
+    <path d="M0 160 L8 152 L8 0 L60 0 L68 8 L68 160 Z" fill="#8B1A1A" opacity="0.6"/>
+    <!-- Main face of A -->
+    <path d="M0 160 L0 0 L60 0 L60 160 Z" fill="url(#gradA)" rx="8"/>
+    <!-- A letterform cutout (white) -->
+    <text x="30" y="140" font-family="Arial Black, sans-serif" font-size="130" font-weight="900" text-anchor="middle" fill="white" opacity="0.95">A</text>
+    <!-- Highlight shine -->
+    <path d="M5 5 Q30 2 55 5 L55 50 Q30 45 5 50 Z" fill="white" opacity="0.2"/>
+  </g>
+
+  <!-- ===== LETTER B ===== -->
+  <g transform="translate(310, 80)" filter="url(#shadow)">
+    <path d="M0 170 L8 162 L8 0 L60 0 L68 8 L68 170 Z" fill="#01518A" opacity="0.6"/>
+    <path d="M0 170 L0 0 L60 0 L60 170 Z" fill="url(#gradB)"/>
+    <text x="30" y="148" font-family="Arial Black, sans-serif" font-size="130" font-weight="900" text-anchor="middle" fill="white" opacity="0.95">B</text>
+    <path d="M5 5 Q30 2 55 5 L55 50 Q30 45 5 50 Z" fill="white" opacity="0.2"/>
+  </g>
+
+  <!-- ===== LETTER C ===== -->
+  <g transform="translate(455, 110)" filter="url(#shadow)">
+    <path d="M0 150 L8 142 L8 0 L60 0 L68 8 L68 150 Z" fill="#A07800" opacity="0.6"/>
+    <path d="M0 150 L0 0 L60 0 L60 150 Z" fill="url(#gradC)"/>
+    <text x="30" y="130" font-family="Arial Black, sans-serif" font-size="130" font-weight="900" text-anchor="middle" fill="white" opacity="0.95">C</text>
+    <path d="M5 5 Q30 2 55 5 L55 50 Q30 45 5 50 Z" fill="white" opacity="0.2"/>
+  </g>
+
+  <!-- Small star decorations -->
+  <g fill="#FFE57F" opacity="0.85">
+    <polygon points="145,150 148,143 151,150 158,150 153,155 155,162 148,158 141,162 143,155 138,150" transform="scale(0.7) translate(90, 110)"/>
+    <polygon points="145,150 148,143 151,150 158,150 153,155 155,162 148,158 141,162 143,155 138,150" transform="scale(0.5) translate(1200, 90)"/>
+    <polygon points="145,150 148,143 151,150 158,150 153,155 155,162 148,158 141,162 143,155 138,150" transform="scale(0.6) translate(960, 280)"/>
+  </g>
+
+  <!-- Butterfly -->
+  <g transform="translate(640, 155)" opacity="0.9">
+    <ellipse cx="-12" cy="-8" rx="14" ry="10" fill="#CE93D8" transform="rotate(-30, -12, -8)"/>
+    <ellipse cx="12" cy="-8" rx="14" ry="10" fill="#CE93D8" transform="rotate(30, 12, -8)"/>
+    <ellipse cx="-10" cy="6" rx="9" ry="7" fill="#BA68C8" transform="rotate(20, -10, 6)"/>
+    <ellipse cx="10" cy="6" rx="9" ry="7" fill="#BA68C8" transform="rotate(-20, 10, 6)"/>
+    <ellipse cx="0" cy="0" rx="3" ry="8" fill="#4A148C"/>
+  </g>
+
+  <!-- Small bird -->
+  <g transform="translate(160, 60)" stroke="#555" stroke-width="1.5" fill="none">
+    <path d="M0 0 Q6 -5 12 0"/>
+    <path d="M14 0 Q20 -5 26 0"/>
+  </g>
+</svg>
