@@ -1,5 +1,5 @@
-import CarouselGallery from '@/components/CarouselGallery';
+import { redirect } from 'next/navigation';
 
-export default function HomePage() {
-  return <CarouselGallery />;
+export default function RootPage() {
+  redirect('/home');
 }

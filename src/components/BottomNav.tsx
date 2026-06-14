@@ -6,7 +6,7 @@ import { BookOpen, Info, Star, Phone, HelpCircle, Home } from 'lucide-react';
 
 const navItems = [
   { href: '/home', label: 'Home', icon: Home },
-  { href: '/', label: 'Lessons', icon: BookOpen },
+  { href: '/lessons', label: 'Lessons', icon: BookOpen },
   { href: '/sight-words', label: '50 Words', icon: Star },
   { href: '/instructions', label: 'How To', icon: HelpCircle },
   { href: '/about', label: 'About', icon: Info },
