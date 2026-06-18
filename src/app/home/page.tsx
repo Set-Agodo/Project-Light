@@ -5,7 +5,7 @@ import { ChevronRight } from 'lucide-react';
 
 const boxes = [
   {
-    href: '/',
+    href: '/lessons',
     color: '#6C5CE7',
     label: 'A–Z Letters',
     desc: 'Learn every letter A through Z through photos, phonics, and interactive quizzes.',
@@ -81,7 +81,7 @@ export default function HomePage() {
           }}>
             Who God Is · Literacy for Life
           </p>
-          <Link href="/" style={{
+          <Link href="/lessons" style={{
             display: 'inline-flex',
             alignItems: 'center',
             gap: 8,
