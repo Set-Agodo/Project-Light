@@ -1,12 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface Props { question: string; word1: string; word2: string; emoji1: string; emoji2: string; yesNoAnswer: boolean; color: string; onCorrect: () => void; }
 
 export default function QuizYesNoSlide({ question, word1, word2, emoji1, emoji2, yesNoAnswer, color, onCorrect }: Props) {
   const [answered, setAnswered] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const audio = new Audio('/audio/phrases/quiz_yesno.m4a');
+    audio.play().catch(() => {});
+  }, []);
 
   const handleAnswer = (answer: boolean) => {
     if (answered !== null) return;

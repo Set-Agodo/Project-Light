@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, XCircle } from 'lucide-react';
 import type { QuizOption } from '@/config/courseData';
@@ -10,6 +10,11 @@ interface Props { question: string; options: QuizOption[]; color: string; onCorr
 export default function QuizChoiceSlide({ question, options, color, onCorrect }: Props) {
   const [selected, setSelected] = useState<string | null>(null);
   const [shake, setShake] = useState<string | null>(null);
+
+  useEffect(() => {
+    const audio = new Audio('/audio/phrases/quiz_choice.m4a');
+    audio.play().catch(() => {});
+  }, []);
 
   const handleSelect = (opt: QuizOption) => {
     if (selected) return;

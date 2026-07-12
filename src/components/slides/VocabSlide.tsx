@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Volume2 } from 'lucide-react';
 
@@ -9,6 +9,11 @@ interface Props { word: string; emoji: string; audioUrl: string; color: string; 
 export default function VocabSlide({ word, emoji, audioUrl, color, letter }: Props) {
   const [playing, setPlaying] = useState(false);
   const [imgError, setImgError] = useState(false);
+
+  useEffect(() => {
+    const audio = new Audio('/audio/phrases/vocab.m4a');
+    audio.play().catch(() => {});
+  }, []);
 
   const imageUrl = `/images/${word.toLowerCase()}.jpg`;
 

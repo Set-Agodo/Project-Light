@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface Props { uppercase: string; caseChoices: string[]; correctCase: string; color: string; onCorrect: () => void; }
@@ -8,6 +8,11 @@ interface Props { uppercase: string; caseChoices: string[]; correctCase: string;
 export default function CaseMatchSlide({ uppercase, caseChoices, correctCase, color, onCorrect }: Props) {
   const [selected, setSelected] = useState<string | null>(null);
   const [shake, setShake] = useState<string | null>(null);
+
+  useEffect(() => {
+    const audio = new Audio('/audio/phrases/casematch.m4a');
+    audio.play().catch(() => {});
+  }, []);
 
   const handleSelect = (choice: string) => {
     if (selected) return;

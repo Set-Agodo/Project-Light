@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface Props { scrambledWords: string[]; correctSentence: string; color: string; onCorrect: () => void; }
@@ -17,6 +17,11 @@ function shuffleArray<T>(arr: T[]): T[] {
 export default function SentenceScrambleSlide({ scrambledWords, correctSentence, color, onCorrect }: Props) {
   const shuffled = useMemo(() => shuffleArray(scrambledWords), [scrambledWords]);
   const [available, setAvailable] = useState<string[]>(shuffled);
+
+  useEffect(() => {
+    const audio = new Audio('/audio/phrases/scramble.m4a');
+    audio.play().catch(() => {});
+  }, []);
   const [selected, setSelected] = useState<string[]>([]);
   const [wrong, setWrong] = useState(false);
 
