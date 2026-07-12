@@ -1,4 +1,6 @@
-import { SIGHT_WORDS } from '@/config/sightWords';
+'use client';
+
+import { SIGHT_WORDS, getSightWordAudio } from '@/config/sightWords';
 
 const TACK_COLORS = [
   'radial-gradient(circle at 35% 35%, #ff6666, #cc0000)',
@@ -6,6 +8,11 @@ const TACK_COLORS = [
   'radial-gradient(circle at 35% 35%, #6699ff, #2244cc)',
   'radial-gradient(circle at 35% 35%, #66cc66, #228822)',
 ];
+
+function playAudio(src: string) {
+  const audio = new Audio(src);
+  audio.play().catch(() => {});
+}
 
 export default function SightWordsPage() {
   return (
@@ -42,12 +49,17 @@ export default function SightWordsPage() {
                 boxShadow: '0 1px 3px rgba(0,0,0,0.45)',
               }} />
             ))}
-            <div style={{ fontSize: 26, marginBottom: 3 }}>⭐</div>
+            {/* Intro audio button */}
+            <button
+              onClick={() => playAudio('/audio/sight-words/50 Most Common English Words.m4a')}
+              style={{ fontSize: 26, marginBottom: 3, background: 'none', border: 'none', cursor: 'pointer', display: 'block', margin: '0 auto 3px' }}
+              title="Play intro"
+            >⭐</button>
             <h1 style={{
               fontFamily: 'var(--font-poppins), Poppins, sans-serif',
               fontWeight: 800, color: '#1e2858', fontSize: 17, marginBottom: 2,
             }}>50 Most Common Words</h1>
-            <p style={{ color: '#2a3878', fontSize: 12, fontWeight: 600 }}>Learn these sight words to read faster!</p>
+            <p style={{ color: '#2a3878', fontSize: 12, fontWeight: 600 }}>Tap any word to hear it!</p>
           </div>
 
           {/* Index card grid with thumbtacks */}
@@ -71,15 +83,24 @@ export default function SightWordsPage() {
                     boxShadow: '0 2px 4px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,200,0.5)',
                     zIndex: 2,
                   }} />
-                  {/* Index card */}
-                  <div style={{
-                    background: '#fffde7',
-                    border: '1px solid #e8dfa8',
-                    borderRadius: 3,
-                    padding: '10px 6px 8px',
-                    textAlign: 'center',
-                    boxShadow: '0 2px 6px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.9)',
-                  }}>
+                  {/* Index card — tappable */}
+                  <button
+                    onClick={() => playAudio(getSightWordAudio(word))}
+                    style={{
+                      width: '100%',
+                      background: '#fffde7',
+                      border: '1px solid #e8dfa8',
+                      borderRadius: 3,
+                      padding: '10px 6px 8px',
+                      textAlign: 'center',
+                      boxShadow: '0 2px 6px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.9)',
+                      cursor: 'pointer',
+                      transition: 'transform 0.1s, box-shadow 0.1s',
+                    }}
+                    onMouseDown={e => (e.currentTarget.style.transform = 'scale(0.95)')}
+                    onMouseUp={e => (e.currentTarget.style.transform = 'scale(1)')}
+                    onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
+                  >
                     <span style={{
                       display: 'block', fontSize: 9, fontWeight: 800,
                       color: '#c8b870', marginBottom: 4, letterSpacing: '0.05em',
@@ -87,7 +108,8 @@ export default function SightWordsPage() {
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <span style={{ fontSize: 13, fontWeight: 800, color: '#1a1a2e', fontFamily: 'var(--font-poppins), Poppins' }}>{word}</span>
-                  </div>
+                    <span style={{ display: 'block', fontSize: 10, marginTop: 3 }}>🔊</span>
+                  </button>
                 </div>
               ))}
             </div>
@@ -116,7 +138,7 @@ export default function SightWordsPage() {
                   <p style={{ fontSize: 12, fontWeight: 800, color: '#4a3800', marginBottom: 4, fontFamily: 'var(--font-poppins), Poppins' }}>Reading Tip</p>
                   <p style={{ fontSize: 12, fontWeight: 500, color: '#5a4a00', lineHeight: 1.6 }}>
                     These 50 words make up about half of all words you read every day!
-                    Practice saying each one out loud for the fastest results.
+                    Tap each card to hear the word spoken out loud.
                   </p>
                 </div>
               </div>
