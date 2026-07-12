@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Rainbow arcs (7 arcs = 7 colors, rendered as layered white arcs with opacity) -->
+  <path d="M10,148 Q100,8 190,148" fill="none" stroke="white" stroke-width="10" opacity="0.18"/>
+  <path d="M20,148 Q100,25 180,148" fill="none" stroke="white" stroke-width="9" opacity="0.22"/>
+  <path d="M30,148 Q100,40 170,148" fill="none" stroke="white" stroke-width="8" opacity="0.28"/>
+  <path d="M40,148 Q100,55 160,148" fill="none" stroke="white" stroke-width="7" opacity="0.36"/>
+  <path d="M50,148 Q100,68 150,148" fill="none" stroke="white" stroke-width="6" opacity="0.50"/>
+  <path d="M60,148 Q100,82 140,148" fill="none" stroke="white" stroke-width="5" opacity="0.68"/>
+  <path d="M72,148 Q100,96 128,148" fill="none" stroke="white" stroke-width="4" opacity="0.88"/>
+  <!-- Waves -->
+  <path d="M10,162 Q35,152 60,162 Q85,172 110,162 Q135,152 160,162 Q185,172 200,162"
+        fill="none" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+  <path d="M10,175 Q40,165 70,175 Q100,185 130,175 Q160,165 190,175"
+        fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
+  <!-- Clouds at ends of rainbow -->
+  <ellipse cx="18" cy="150" rx="18" ry="12" fill="white" opacity="0.7"/>
+  <ellipse cx="182" cy="150" rx="18" ry="12" fill="white" opacity="0.7"/>
+  <ellipse cx="10" cy="148" rx="10" ry="8" fill="white" opacity="0.6"/>
+  <ellipse cx="190" cy="148" rx="10" ry="8" fill="white" opacity="0.6"/>
+</svg>

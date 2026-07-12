@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Glow around flame -->
+  <ellipse cx="100" cy="110" rx="45" ry="60" fill="rgba(255,255,255,0.12)"/>
+  <!-- Oil lamp base -->
+  <ellipse cx="100" cy="158" rx="42" ry="10" fill="rgba(255,255,255,0.3)"/>
+  <!-- Lamp body -->
+  <path d="M65,158 Q62,130 72,118 Q82,108 100,108 Q118,108 128,118 Q138,130 135,158 Z" fill="white" opacity="0.88"/>
+  <!-- Lamp spout (left side) -->
+  <path d="M65,130 Q50,125 42,118 Q38,114 40,108 Q44,105 52,112 Q60,120 65,130 Z" fill="white" opacity="0.82"/>
+  <!-- Handle (right side arc) -->
+  <path d="M135,140 Q155,140 155,120 Q155,102 140,100 Q132,99 130,108"
+        fill="none" stroke="white" stroke-width="7" stroke-linecap="round" opacity="0.85"/>
+  <!-- Wick at top of spout -->
+  <rect x="35" y="100" width="8" height="18" rx="4" fill="white" opacity="0.7"/>
+  <!-- Flame -->
+  <path d="M39,100 Q36,85 39,72 Q42,60 39,50 Q48,62 52,75 Q56,62 54,48 Q62,64 58,82 Q60,90 58,100 Z"
+        fill="white" opacity="0.92"/>
+  <!-- Inner flame glow -->
+  <path d="M41,98 Q39,87 42,76 Q44,67 42,60 Q48,68 50,76 Q52,68 51,60 Q56,70 53,82 Q55,88 53,98 Z"
+        fill="rgba(255,255,255,0.55)"/>
+  <!-- Rays from flame -->
+  <line x1="39" y1="55" x2="34" y2="45" stroke="white" stroke-width="2" opacity="0.55"/>
+  <line x1="50" y1="50" x2="52" y2="38" stroke="white" stroke-width="2" opacity="0.5"/>
+  <line x1="25" y1="75" x2="14" y2="72" stroke="white" stroke-width="1.5" opacity="0.45"/>
+  <line x1="60" y1="70" x2="70" y2="65" stroke="white" stroke-width="1.5" opacity="0.4"/>
+  <!-- Oil drops / fill line inside lamp body -->
+  <ellipse cx="100" cy="140" rx="28" ry="8" fill="rgba(255,255,255,0.3)"/>
+  <line x1="72" y1="140" x2="128" y2="140" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+</svg>

@@ -45,6 +45,7 @@ export interface LetterModule {
   lightColor: string;
   darkColor: string;
   emoji: string;
+  image: string;
   slides: Slide[];
 }
 
@@ -78,6 +79,7 @@ const makeModule = (
   const n = vocabWords.length;
   return {
     letter, attribute, sentence, color, lightColor, darkColor, emoji,
+    image: `/images/letters/${letter}.svg`,
     slides: [
       { id: 1, type: 'welcome', title: `Letter ${letter}${letter.toLowerCase()}`, subtitle: 'Who God Is' },
       { id: 2, type: 'phonetic', letterPair: `${letter}${letter.toLowerCase()}`, audioUrl: `/audio/${letter.toLowerCase()}_sound.m4a` },

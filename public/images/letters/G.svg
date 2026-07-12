@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Ground line -->
+  <line x1="20" y1="175" x2="180" y2="175" stroke="white" stroke-width="2.5" opacity="0.4"/>
+  <!-- Father (tall figure, left-center) -->
+  <!-- Head -->
+  <circle cx="85" cy="52" r="18" fill="white" opacity="0.92"/>
+  <!-- Body -->
+  <path d="M68,70 Q62,115 60,175 L110,175 Q108,115 102,70 Z" fill="white" opacity="0.88"/>
+  <!-- Arms reaching out/down to child -->
+  <path d="M68,85 Q45,100 30,118" stroke="white" stroke-width="10" stroke-linecap="round" fill="none" opacity="0.88"/>
+  <path d="M102,85 Q122,100 135,120" stroke="white" stroke-width="10" stroke-linecap="round" fill="none" opacity="0.88"/>
+  <!-- Son (smaller figure, running from right into arms) -->
+  <!-- Head -->
+  <circle cx="148" cy="102" r="12" fill="white" opacity="0.88"/>
+  <!-- Body -->
+  <path d="M138,114 Q134,145 132,175 L164,175 Q162,145 158,114 Z" fill="white" opacity="0.82"/>
+  <!-- Child's arm reaching toward father -->
+  <path d="M138,122 Q125,125 115,122" stroke="white" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.82"/>
+  <!-- Hearts -->
+  <path d="M100,30 Q103,24 108,28 Q113,24 116,30 Q116,36 108,42 Q100,36 100,30 Z" fill="white" opacity="0.7"/>
+</svg>

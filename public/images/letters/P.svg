@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Rolling hills / horizon -->
+  <path d="M0,155 Q50,130 100,145 Q150,160 200,140 L200,200 L0,200 Z" fill="rgba(255,255,255,0.18)"/>
+  <!-- Hilltop path (winding road) -->
+  <path d="M100,148 Q95,160 88,178" fill="none" stroke="white" stroke-width="3" opacity="0.4" stroke-dasharray="5,5"/>
+  <!-- Father figure standing on hilltop with hand raised -->
+  <!-- Body -->
+  <path d="M85,100 Q80,130 76,162 L106,162 Q102,130 115,100 Z" fill="white" opacity="0.9"/>
+  <!-- Head -->
+  <circle cx="100" cy="85" r="16" fill="white" opacity="0.92"/>
+  <!-- Right arm raised (shading eyes / welcoming) -->
+  <path d="M115,110 Q132,98 148,90" stroke="white" stroke-width="10" stroke-linecap="round" fill="none" opacity="0.9"/>
+  <!-- Left arm down -->
+  <path d="M85,110 Q72,118 62,128" stroke="white" stroke-width="10" stroke-linecap="round" fill="none" opacity="0.88"/>
+  <!-- Son figure far below (small, running toward) -->
+  <circle cx="160" cy="148" r="8" fill="white" opacity="0.78"/>
+  <path d="M154,156 Q150,168 148,178 L170,178 Q168,168 166,156 Z" fill="white" opacity="0.72"/>
+  <!-- Motion lines behind son -->
+  <line x1="178" y1="155" x2="185" y2="153" stroke="white" stroke-width="1.5" opacity="0.4"/>
+  <line x1="180" y1="162" x2="188" y2="161" stroke="white" stroke-width="1.2" opacity="0.35"/>
+  <!-- Sun / light in sky -->
+  <circle cx="32" cy="32" r="20" fill="rgba(255,255,255,0.75)"/>
+  <!-- Sun rays -->
+  <line x1="32" y1="8" x2="32" y2="2" stroke="white" stroke-width="2.5" opacity="0.6"/>
+  <line x1="55" y1="15" x2="59" y2="11" stroke="white" stroke-width="2" opacity="0.5"/>
+  <line x1="62" y1="36" x2="68" y2="36" stroke="white" stroke-width="2" opacity="0.5"/>
+  <line x1="55" y1="55" x2="59" y2="59" stroke="white" stroke-width="2" opacity="0.5"/>
+  <line x1="9" y1="15" x2="5" y2="11" stroke="white" stroke-width="2" opacity="0.5"/>
+  <!-- Clouds -->
+  <ellipse cx="145" cy="38" rx="30" ry="12" fill="rgba(255,255,255,0.55)"/>
+  <ellipse cx="160" cy="32" rx="22" ry="10" fill="rgba(255,255,255,0.5)"/>
+  <ellipse cx="130" cy="34" rx="18" ry="9" fill="rgba(255,255,255,0.45)"/>
+</svg>

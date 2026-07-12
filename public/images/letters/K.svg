@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Ground -->
+  <line x1="15" y1="178" x2="185" y2="178" stroke="white" stroke-width="2" opacity="0.35"/>
+  <!-- Central adult figure (Jesus) -->
+  <!-- Head with halo -->
+  <circle cx="100" cy="52" r="20" fill="white" opacity="0.92"/>
+  <circle cx="100" cy="52" r="28" fill="none" stroke="white" stroke-width="2" opacity="0.45"/>
+  <!-- Robe/body -->
+  <path d="M80,72 Q72,120 68,178 L132,178 Q128,120 120,72 Z" fill="white" opacity="0.88"/>
+  <!-- Arms outstretched wide -->
+  <path d="M80,90 Q55,88 22,98" stroke="white" stroke-width="11" stroke-linecap="round" fill="none" opacity="0.88"/>
+  <path d="M120,90 Q145,88 178,98" stroke="white" stroke-width="11" stroke-linecap="round" fill="none" opacity="0.88"/>
+  <!-- Child left -->
+  <circle cx="42" cy="115" r="10" fill="white" opacity="0.82"/>
+  <path d="M34,125 Q30,152 28,178 L56,178 Q54,152 50,125 Z" fill="white" opacity="0.78"/>
+  <!-- Child right -->
+  <circle cx="158" cy="115" r="10" fill="white" opacity="0.82"/>
+  <path d="M150,125 Q146,152 144,178 L172,178 Q170,152 166,125 Z" fill="white" opacity="0.78"/>
+  <!-- Small child center-left, crouching at feet -->
+  <circle cx="78" cy="150" r="8" fill="white" opacity="0.75"/>
+  <!-- Small child center-right -->
+  <circle cx="122" cy="150" r="8" fill="white" opacity="0.75"/>
+  <!-- Hearts above -->
+  <path d="M96,22 Q98,18 101,21 Q104,18 106,22 Q106,26 101,30 Q96,26 96,22 Z" fill="white" opacity="0.65"/>
+  <path d="M76,18 Q78,14 80,17 Q82,14 84,18 Q84,22 80,25 Q76,22 76,18 Z" fill="white" opacity="0.5"/>
+  <path d="M116,18 Q118,14 120,17 Q122,14 124,18 Q124,22 120,25 Q116,22 116,18 Z" fill="white" opacity="0.5"/>
+</svg>

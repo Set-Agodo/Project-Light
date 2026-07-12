@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Open Bible: left page -->
+  <path d="M100,50 Q85,48 55,52 Q30,56 22,68 L22,172 Q30,162 55,158 Q80,154 100,156 Z"
+        fill="white" opacity="0.88"/>
+  <!-- Left page lines -->
+  <line x1="35" y1="80" x2="90" y2="77" stroke="rgba(0,0,0,0.15)" stroke-width="2"/>
+  <line x1="33" y1="92" x2="88" y2="89" stroke="rgba(0,0,0,0.15)" stroke-width="2"/>
+  <line x1="31" y1="104" x2="86" y2="101" stroke="rgba(0,0,0,0.15)" stroke-width="2"/>
+  <line x1="30" y1="116" x2="85" y2="113" stroke="rgba(0,0,0,0.15)" stroke-width="2"/>
+  <line x1="29" y1="128" x2="84" y2="125" stroke="rgba(0,0,0,0.15)" stroke-width="2"/>
+  <line x1="28" y1="140" x2="83" y2="137" stroke="rgba(0,0,0,0.15)" stroke-width="2"/>
+  <!-- Open Bible: right page -->
+  <path d="M100,50 Q115,48 145,52 Q170,56 178,68 L178,172 Q170,162 145,158 Q120,154 100,156 Z"
+        fill="white" opacity="0.88"/>
+  <!-- Right page lines -->
+  <line x1="110" y1="77" x2="165" y2="80" stroke="rgba(0,0,0,0.15)" stroke-width="2"/>
+  <line x1="112" y1="89" x2="167" y2="92" stroke="rgba(0,0,0,0.15)" stroke-width="2"/>
+  <line x1="114" y1="101" x2="169" y2="104" stroke="rgba(0,0,0,0.15)" stroke-width="2"/>
+  <line x1="115" y1="113" x2="170" y2="116" stroke="rgba(0,0,0,0.15)" stroke-width="2"/>
+  <line x1="116" y1="125" x2="171" y2="128" stroke="rgba(0,0,0,0.15)" stroke-width="2"/>
+  <line x1="117" y1="137" x2="172" y2="140" stroke="rgba(0,0,0,0.15)" stroke-width="2"/>
+  <!-- Spine / binding -->
+  <line x1="100" y1="50" x2="100" y2="156" stroke="rgba(0,0,0,0.2)" stroke-width="3"/>
+  <!-- Cross ribbon bookmark -->
+  <line x1="138" y1="50" x2="138" y2="172" stroke="rgba(0,0,0,0.15)" stroke-width="2.5" stroke-dasharray="4,4"/>
+  <!-- Light rays from above pages -->
+  <line x1="65" y1="50" x2="55" y2="32" stroke="white" stroke-width="2" opacity="0.6"/>
+  <line x1="100" y1="50" x2="100" y2="28" stroke="white" stroke-width="2.5" opacity="0.65"/>
+  <line x1="135" y1="50" x2="145" y2="32" stroke="white" stroke-width="2" opacity="0.6"/>
+  <!-- Glow arc above book -->
+  <path d="M45,50 Q100,22 155,50" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="2"/>
+  <!-- Dove above (Word and Spirit) -->
+  <ellipse cx="100" cy="16" rx="12" ry="7" fill="white" opacity="0.82"/>
+  <path d="M88,16 Q78,8 72,12" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  <path d="M112,16 Q122,8 128,12" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+</svg>

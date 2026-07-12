@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Bush branches -->
+  <ellipse cx="100" cy="130" rx="50" ry="30" fill="rgba(255,255,255,0.25)" stroke="white" stroke-width="2"/>
+  <ellipse cx="70" cy="120" rx="32" ry="20" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2"/>
+  <ellipse cx="130" cy="120" rx="32" ry="20" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2"/>
+  <ellipse cx="100" cy="112" rx="28" ry="18" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2"/>
+  <ellipse cx="60" cy="115" rx="22" ry="15" fill="rgba(255,255,255,0.18)"/>
+  <ellipse cx="140" cy="115" rx="22" ry="15" fill="rgba(255,255,255,0.18)"/>
+  <!-- Bush stem/trunk -->
+  <rect x="92" y="148" width="16" height="28" rx="4" fill="white" opacity="0.55"/>
+  <!-- Central flame (tall) -->
+  <path d="M100,32 Q88,55 92,75 Q82,62 84,85 Q72,70 78,100 Q86,120 100,125 Q114,120 122,100 Q128,70 116,85 Q118,62 108,75 Q112,55 100,32 Z" fill="white" opacity="0.95"/>
+  <!-- Inner flame (smaller, slightly different opacity) -->
+  <path d="M100,52 Q93,65 96,80 Q90,72 94,92 Q98,108 100,110 Q102,108 106,92 Q110,72 104,80 Q107,65 100,52 Z" fill="rgba(255,255,255,0.5)"/>
+  <!-- Glow -->
+  <circle cx="100" cy="95" r="35" fill="rgba(255,255,255,0.12)"/>
+  <!-- Rays -->
+  <line x1="100" y1="22" x2="100" y2="10" stroke="white" stroke-width="2" opacity="0.5"/>
+  <line x1="130" y1="38" x2="138" y2="30" stroke="white" stroke-width="2" opacity="0.4"/>
+  <line x1="70" y1="38" x2="62" y2="30" stroke="white" stroke-width="2" opacity="0.4"/>
+</svg>

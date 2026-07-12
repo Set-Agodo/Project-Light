@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Ground / earth -->
+  <path d="M0,155 Q100,140 200,155 L200,200 L0,200 Z" fill="rgba(255,255,255,0.22)"/>
+  <!-- Rolling hill -->
+  <ellipse cx="100" cy="160" rx="85" ry="22" fill="rgba(255,255,255,0.28)"/>
+  <!-- Tomb entrance (cave opening) -->
+  <path d="M50,155 Q50,100 100,92 Q150,100 150,155 Z" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="4" opacity="0.85"/>
+  <!-- Large stone rolled away (to the right, partially visible) -->
+  <circle cx="164" cy="140" r="32" fill="rgba(255,255,255,0.75)"/>
+  <!-- Stone shadow / crack lines -->
+  <line x1="158" y1="118" x2="172" y2="130" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <line x1="150" y1="138" x2="162" y2="150" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+  <!-- Bright light pouring out of empty tomb -->
+  <path d="M100,92 L78,50 L100,60 L122,50 Z" fill="rgba(255,255,255,0.45)"/>
+  <path d="M100,92 L88,48 L100,58 L112,48 Z" fill="rgba(255,255,255,0.55)"/>
+  <!-- Burial cloth / linens on ground inside -->
+  <path d="M70,148 Q100,142 130,148" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+  <ellipse cx="100" cy="148" rx="18" ry="5" fill="rgba(255,255,255,0.4)"/>
+  <!-- Rays from empty tomb -->
+  <line x1="100" y1="90" x2="100" y2="25" stroke="white" stroke-width="3" opacity="0.6"/>
+  <line x1="100" y1="90" x2="68" y2="30" stroke="white" stroke-width="2" opacity="0.45"/>
+  <line x1="100" y1="90" x2="132" y2="30" stroke="white" stroke-width="2" opacity="0.45"/>
+  <line x1="100" y1="90" x2="42" y2="55" stroke="white" stroke-width="1.5" opacity="0.35"/>
+  <line x1="100" y1="90" x2="158" y2="55" stroke="white" stroke-width="1.5" opacity="0.35"/>
+  <!-- Stars (early morning) -->
+  <circle cx="30" cy="22" r="2.5" fill="white" opacity="0.65"/>
+  <circle cx="170" cy="18" r="2" fill="white" opacity="0.6"/>
+  <circle cx="18" cy="55" r="1.8" fill="white" opacity="0.5"/>
+</svg>

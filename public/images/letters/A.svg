@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Stars -->
+  <circle cx="35" cy="38" r="2.5" fill="white" opacity="0.8"/>
+  <circle cx="165" cy="32" r="2.5" fill="white" opacity="0.8"/>
+  <circle cx="152" cy="62" r="1.8" fill="white" opacity="0.6"/>
+  <circle cx="22" cy="72" r="1.8" fill="white" opacity="0.6"/>
+  <circle cx="178" cy="78" r="1.5" fill="white" opacity="0.5"/>
+  <!-- Back mountain -->
+  <polygon points="0,175 60,108 105,175" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Main mountain -->
+  <polygon points="22,175 100,52 178,175" fill="rgba(255,255,255,0.18)" stroke="white" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Lightning bolt -->
+  <path d="M118,22 L100,82 L114,82 L94,148 L138,68 L122,68 Z" fill="white" opacity="0.95"/>
+</svg>

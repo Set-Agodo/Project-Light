@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Grassy hillside ground -->
+  <path d="M0,158 Q50,145 100,152 Q150,158 200,145 L200,200 L0,200 Z" fill="rgba(255,255,255,0.2)"/>
+  <!-- Basket of loaves (left side) -->
+  <!-- Basket body -->
+  <path d="M20,130 Q22,148 30,155 Q40,160 58,158 Q70,156 72,148 Q74,138 72,130 Z"
+        fill="white" opacity="0.85"/>
+  <!-- Basket weave lines -->
+  <path d="M22,138 Q46,140 70,135" fill="none" stroke="rgba(0,0,0,0.18)" stroke-width="2"/>
+  <path d="M24,146 Q48,148 70,143" fill="none" stroke="rgba(0,0,0,0.18)" stroke-width="2"/>
+  <!-- Basket rim -->
+  <path d="M20,130 Q46,124 72,130" fill="none" stroke="white" stroke-width="4" opacity="0.9"/>
+  <!-- Bread loaves in basket -->
+  <ellipse cx="35" cy="126" rx="12" ry="8" fill="white" opacity="0.9"/>
+  <ellipse cx="54" cy="123" rx="12" ry="8" fill="white" opacity="0.9"/>
+  <ellipse cx="45" cy="115" rx="10" ry="7" fill="white" opacity="0.85"/>
+  <!-- Fish (right side) -->
+  <!-- Large fish 1 -->
+  <path d="M112,100 Q138,90 158,100 Q138,110 112,100 Z" fill="white" opacity="0.9"/>
+  <path d="M112,100 Q104,90 102,100 Q104,110 112,100 Z" fill="white" opacity="0.9"/>
+  <!-- Fish eye -->
+  <circle cx="152" cy="100" r="3" fill="rgba(255,255,255,0.6)"/>
+  <!-- Large fish 2 -->
+  <path d="M118,130 Q144,120 164,130 Q144,140 118,130 Z" fill="white" opacity="0.88"/>
+  <path d="M118,130 Q110,120 108,130 Q110,140 118,130 Z" fill="white" opacity="0.88"/>
+  <circle cx="158" cy="130" r="3" fill="rgba(255,255,255,0.6)"/>
+  <!-- Small fish 3 -->
+  <path d="M122,158 Q140,150 155,158 Q140,166 122,158 Z" fill="white" opacity="0.82"/>
+  <path d="M122,158 Q116,150 114,158 Q116,166 122,158 Z" fill="white" opacity="0.82"/>
+  <!-- Miracle rays / light from above -->
+  <line x1="100" y1="30" x2="72" y2="118" stroke="white" stroke-width="2.5" opacity="0.5"/>
+  <line x1="100" y1="30" x2="100" y2="80" stroke="white" stroke-width="3" opacity="0.55"/>
+  <line x1="100" y1="30" x2="140" y2="100" stroke="white" stroke-width="2" opacity="0.45"/>
+  <!-- Hands blessing from above (Jesus) -->
+  <path d="M80,25 Q70,32 66,42" stroke="white" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.85"/>
+  <path d="M120,25 Q130,32 134,42" stroke="white" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.85"/>
+  <!-- Glow circle -->
+  <circle cx="100" cy="28" r="16" fill="rgba(255,255,255,0.65)"/>
+  <!-- Stars / dots for miracle -->
+  <circle cx="30" cy="60" r="2.5" fill="white" opacity="0.6"/>
+  <circle cx="170" cy="55" r="2" fill="white" opacity="0.55"/>
+  <circle cx="18" cy="110" r="1.8" fill="white" opacity="0.45"/>
+  <circle cx="182" cy="105" r="1.8" fill="white" opacity="0.45"/>
+</svg>

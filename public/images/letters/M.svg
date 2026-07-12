@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Sky / sun above -->
+  <circle cx="100" cy="28" r="18" fill="white" opacity="0.88"/>
+  <line x1="100" y1="5" x2="100" y2="2" stroke="white" stroke-width="2.5" opacity="0.6"/>
+  <line x1="120" y1="10" x2="122" y2="7" stroke="white" stroke-width="2" opacity="0.5"/>
+  <line x1="80" y1="10" x2="78" y2="7" stroke="white" stroke-width="2" opacity="0.5"/>
+  <!-- Left wall of water (tall, curved inward) -->
+  <path d="M10,60 Q28,52 32,100 Q36,148 38,175 L2,175 Q2,148 2,100 Q2,52 10,60 Z" fill="rgba(255,255,255,0.85)"/>
+  <!-- Left wall waves -->
+  <path d="M10,72 Q22,68 28,80" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <path d="M12,95 Q24,90 30,102" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+  <path d="M14,118 Q26,113 32,125" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+  <path d="M16,140 Q28,135 34,147" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+  <!-- Right wall of water -->
+  <path d="M190,60 Q172,52 168,100 Q164,148 162,175 L198,175 Q198,148 198,100 Q198,52 190,60 Z" fill="rgba(255,255,255,0.85)"/>
+  <!-- Right wall waves -->
+  <path d="M190,72 Q178,68 172,80" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <path d="M188,95 Q176,90 170,102" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"/>
+  <path d="M186,118 Q174,113 168,125" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+  <path d="M184,140 Q172,135 166,147" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+  <!-- Dry path between the walls -->
+  <path d="M38,175 L162,175 L155,120 L145,90 L100,75 L55,90 L45,120 Z" fill="rgba(255,255,255,0.22)"/>
+  <!-- Small figures crossing (people) -->
+  <ellipse cx="80" cy="148" rx="5" ry="7" fill="white" opacity="0.7"/>
+  <ellipse cx="100" cy="145" rx="5" ry="7" fill="white" opacity="0.7"/>
+  <ellipse cx="120" cy="148" rx="5" ry="7" fill="white" opacity="0.7"/>
+  <ellipse cx="65" cy="155" rx="4" ry="6" fill="white" opacity="0.6"/>
+  <ellipse cx="135" cy="155" rx="4" ry="6" fill="white" opacity="0.6"/>
+</svg>

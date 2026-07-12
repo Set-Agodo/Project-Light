@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Starfield -->
+  <circle cx="22" cy="25" r="2" fill="white" opacity="0.8"/>
+  <circle cx="178" cy="20" r="2" fill="white" opacity="0.8"/>
+  <circle cx="48" cy="52" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="155" cy="48" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="15" cy="80" r="1.5" fill="white" opacity="0.5"/>
+  <circle cx="185" cy="75" r="1.5" fill="white" opacity="0.5"/>
+  <circle cx="30" cy="155" r="1.8" fill="white" opacity="0.6"/>
+  <circle cx="170" cy="160" r="1.8" fill="white" opacity="0.6"/>
+  <circle cx="100" cy="18" r="2.5" fill="white" opacity="0.75"/>
+  <!-- Cross -->
+  <!-- Vertical beam -->
+  <rect x="88" y="55" width="24" height="110" rx="4" fill="white" opacity="0.92"/>
+  <!-- Horizontal beam -->
+  <rect x="52" y="85" width="96" height="24" rx="4" fill="white" opacity="0.92"/>
+  <!-- Glow around cross intersection -->
+  <circle cx="100" cy="97" r="22" fill="rgba(255,255,255,0.18)"/>
+  <!-- Infinity symbol beneath -->
+  <path d="M62,168 Q72,155 85,162 Q100,172 115,162 Q128,155 138,168 Q128,180 115,173 Q100,163 85,173 Q72,180 62,168 Z" fill="none" stroke="white" stroke-width="2.5" opacity="0.75"/>
+</svg>

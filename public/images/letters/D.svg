@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Rays from above -->
+  <line x1="100" y1="10" x2="100" y2="55" stroke="white" stroke-width="2" opacity="0.5"/>
+  <line x1="100" y1="10" x2="72" y2="52" stroke="white" stroke-width="1.5" opacity="0.35"/>
+  <line x1="100" y1="10" x2="128" y2="52" stroke="white" stroke-width="1.5" opacity="0.35"/>
+  <!-- Dove body -->
+  <ellipse cx="100" cy="105" rx="26" ry="16" fill="white" opacity="0.95"/>
+  <!-- Head -->
+  <circle cx="128" cy="97" r="12" fill="white" opacity="0.95"/>
+  <!-- Beak -->
+  <polygon points="140,96 150,99 140,102" fill="rgba(255,255,255,0.7)"/>
+  <!-- Eye -->
+  <circle cx="132" cy="95" r="2.5" fill="rgba(0,0,0,0.25)"/>
+  <!-- Left wing -->
+  <path d="M90,108 Q60,88 30,108 Q50,122 90,118 Z" fill="white" opacity="0.88"/>
+  <!-- Right wing -->
+  <path d="M110,108 Q140,88 170,108 Q150,122 110,118 Z" fill="white" opacity="0.88"/>
+  <!-- Wing details -->
+  <path d="M90,108 Q70,100 50,110" stroke="rgba(255,255,255,0.5)" stroke-width="1" fill="none"/>
+  <path d="M90,113 Q68,106 44,116" stroke="rgba(255,255,255,0.4)" stroke-width="1" fill="none"/>
+  <path d="M110,108 Q130,100 150,110" stroke="rgba(255,255,255,0.5)" stroke-width="1" fill="none"/>
+  <path d="M110,113 Q132,106 156,116" stroke="rgba(255,255,255,0.4)" stroke-width="1" fill="none"/>
+  <!-- Tail -->
+  <path d="M74,112 Q60,130 50,145 Q70,135 80,120 Z" fill="white" opacity="0.8"/>
+  <!-- Olive branch in beak -->
+  <path d="M148,100 Q160,92 168,88" stroke="rgba(255,255,255,0.7)" stroke-width="2" fill="none"/>
+  <ellipse cx="162" cy="90" rx="5" ry="3" fill="rgba(255,255,255,0.6)" transform="rotate(-20,162,90)"/>
+  <ellipse cx="170" cy="87" rx="4" ry="2.5" fill="rgba(255,255,255,0.6)" transform="rotate(-30,170,87)"/>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Stars around -->
+  <circle cx="20" cy="28" r="2" fill="white" opacity="0.7"/>
+  <circle cx="180" cy="22" r="2" fill="white" opacity="0.7"/>
+  <circle cx="188" cy="155" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="14" cy="160" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="30" cy="100" r="1.5" fill="white" opacity="0.5"/>
+  <circle cx="172" cy="105" r="1.5" fill="white" opacity="0.5"/>
+  <!-- Earth -->
+  <circle cx="100" cy="105" r="55" fill="none" stroke="white" stroke-width="3" opacity="0.95"/>
+  <circle cx="100" cy="105" r="55" fill="rgba(255,255,255,0.12)"/>
+  <!-- Landmasses (simple blobs) -->
+  <ellipse cx="85" cy="90" rx="20" ry="28" fill="white" opacity="0.7"/>
+  <ellipse cx="118" cy="112" rx="16" ry="22" fill="white" opacity="0.6"/>
+  <ellipse cx="78" cy="128" rx="10" ry="8" fill="white" opacity="0.5"/>
+  <!-- Sun top-right -->
+  <circle cx="162" cy="42" r="16" fill="white" opacity="0.9"/>
+  <line x1="162" y1="18" x2="162" y2="10" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="180" y1="28" x2="186" y2="22" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="186" y1="42" x2="194" y2="42" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Moon top-left -->
+  <path d="M38,50 Q28,38 38,26 Q22,26 22,38 Q22,50 38,50 Z" fill="white" opacity="0.85"/>
+</svg>

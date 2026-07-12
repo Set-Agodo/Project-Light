@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Sea / water waves at bottom -->
+  <path d="M0,160 Q25,148 50,158 Q75,168 100,156 Q125,144 150,154 Q175,164 200,152 L200,200 L0,200 Z"
+        fill="rgba(255,255,255,0.25)"/>
+  <path d="M0,172 Q30,162 60,170 Q90,178 120,166 Q150,154 180,164 L200,160 L200,200 L0,200 Z"
+        fill="rgba(255,255,255,0.18)"/>
+  <!-- Anchor chain -->
+  <line x1="100" y1="30" x2="100" y2="130" stroke="white" stroke-width="4" opacity="0.7" stroke-dasharray="8,5"/>
+  <!-- Anchor ring at top -->
+  <circle cx="100" cy="25" r="12" fill="none" stroke="white" stroke-width="5" opacity="0.88"/>
+  <!-- Anchor crossbar -->
+  <line x1="60" y1="70" x2="140" y2="70" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+  <!-- Anchor shaft -->
+  <line x1="100" y1="68" x2="100" y2="148" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+  <!-- Anchor left fluke -->
+  <path d="M100,148 Q82,148 72,162 Q82,155 100,155 Z" fill="white" opacity="0.9"/>
+  <!-- Anchor right fluke -->
+  <path d="M100,148 Q118,148 128,162 Q118,155 100,155 Z" fill="white" opacity="0.9"/>
+  <!-- Flukes bottom bar -->
+  <line x1="72" y1="162" x2="128" y2="162" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.85"/>
+  <!-- Rock base (anchor resting on) -->
+  <ellipse cx="100" cy="168" rx="55" ry="14" fill="rgba(255,255,255,0.35)"/>
+  <!-- Rays from anchor cross -->
+  <line x1="60" y1="70" x2="48" y2="62" stroke="white" stroke-width="1.5" opacity="0.4"/>
+  <line x1="140" y1="70" x2="152" y2="62" stroke="white" stroke-width="1.5" opacity="0.4"/>
+  <!-- Hope text-like curved line -->
+  <path d="M40,140 Q100,120 160,140" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2" stroke-dasharray="4,4"/>
+</svg>

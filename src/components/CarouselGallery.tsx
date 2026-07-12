@@ -170,9 +170,12 @@ export default function CarouselGallery() {
                 style={{ background: `linear-gradient(160deg, ${m.color} 0%, ${m.color}99 100%)` }}
               >
                 <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 10%, rgba(255,255,255,0.28) 0%, transparent 60%)' }} />
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden" style={{ color: 'rgba(255,255,255,0.07)', fontSize: 190, fontWeight: 900, lineHeight: 1 }}>
-                  {m.letter}
-                </div>
+                <img
+                  src={m.image}
+                  alt={m.attribute}
+                  className="absolute pointer-events-none"
+                  style={{ top: 40, left: '50%', transform: 'translateX(-50%)', width: 160, height: 160, objectFit: 'contain', opacity: 0.92 }}
+                />
                 <div className="absolute inset-x-0 bottom-0 h-3/5 pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%)' }} />
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <div className="text-5xl font-black text-white leading-none">{m.letter}</div>

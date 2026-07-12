@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Scale beam / crossbar -->
+  <line x1="40" y1="82" x2="160" y2="82" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+  <!-- Central pivot post -->
+  <line x1="100" y1="20" x2="100" y2="178" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+  <!-- Pivot point circle -->
+  <circle cx="100" cy="82" r="9" fill="white" opacity="0.92"/>
+  <!-- Top finial -->
+  <circle cx="100" cy="24" r="7" fill="white" opacity="0.85"/>
+  <!-- Left scale pan suspension chains -->
+  <line x1="40" y1="82" x2="25" y2="120" stroke="white" stroke-width="2" opacity="0.7"/>
+  <line x1="40" y1="82" x2="55" y2="120" stroke="white" stroke-width="2" opacity="0.7"/>
+  <!-- Right scale pan suspension chains -->
+  <line x1="160" y1="82" x2="145" y2="120" stroke="white" stroke-width="2" opacity="0.7"/>
+  <line x1="160" y1="82" x2="175" y2="120" stroke="white" stroke-width="2" opacity="0.7"/>
+  <!-- Left pan -->
+  <path d="M12,122 Q40,130 68,122" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+  <!-- Right pan -->
+  <path d="M132,122 Q160,130 188,122" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+  <!-- Feather on left pan (truth/justice symbol) -->
+  <path d="M40,116 Q36,108 38,100 Q40,94 44,90 Q46,94 45,102 Q48,96 52,92 Q53,98 50,106 Q54,100 58,97 Q58,104 54,110 Q50,115 44,118 Z"
+        fill="white" opacity="0.85"/>
+  <!-- Heart on right pan (deeds being weighed) -->
+  <path d="M148,106 Q148,97 155,97 Q160,97 160,103 Q160,97 165,97 Q172,97 172,106 Q172,115 160,124 Q148,115 148,106 Z"
+        fill="white" opacity="0.85"/>
+  <!-- Rays from top -->
+  <line x1="100" y1="18" x2="84" y2="8" stroke="white" stroke-width="1.5" opacity="0.45"/>
+  <line x1="100" y1="18" x2="116" y2="8" stroke="white" stroke-width="1.5" opacity="0.45"/>
+  <!-- Base stand -->
+  <path d="M80,178 L120,178 L115,162 L85,162 Z" fill="white" opacity="0.7"/>
+  <line x1="68" y1="178" x2="132" y2="178" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.75"/>
+</svg>
