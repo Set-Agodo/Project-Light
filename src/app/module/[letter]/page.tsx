@@ -14,6 +14,7 @@ import CaseMatchSlide from '@/components/slides/CaseMatchSlide';
 import TypeWordSlide from '@/components/slides/TypeWordSlide';
 import SentenceScrambleSlide from '@/components/slides/SentenceScrambleSlide';
 import CompletionSlide from '@/components/slides/CompletionSlide';
+import LetterCompleteSlide from '@/components/slides/LetterCompleteSlide';
 
 const RING_COUNT = 13;
 
@@ -55,6 +56,7 @@ export default function ModulePage({ params }: { params: Promise<{ letter: strin
       case 'quiz-caseMatch': return <CaseMatchSlide uppercase={slide.uppercase!} caseChoices={slide.caseChoices!} correctCase={slide.correctCase!} color={mod.color} onCorrect={handleQuizCorrect} />;
       case 'type-word': return <TypeWordSlide word={slide.word!} emoji={slide.emoji!} color={mod.color} letter={mod.letter} onCorrect={handleQuizCorrect} />;
       case 'scramble': return <SentenceScrambleSlide scrambledWords={slide.scrambledWords!} correctSentence={slide.correctSentence!} color={mod.color} onCorrect={handleQuizCorrect} />;
+      case 'quiz-letter-complete': return <LetterCompleteSlide completeWord={slide.completeWord!} caseChoices={slide.caseChoices!} correctCase={slide.correctCase!} color={mod.color} onCorrect={handleQuizCorrect} />;
       case 'complete': return <CompletionSlide letter={mod.letter} attribute={mod.attribute} sentence={mod.sentence} color={mod.color} />;
       default: return null;
     }
