@@ -6,6 +6,7 @@ export type SlideType =
   | 'quiz-yesno'
   | 'quiz-caseMatch'
   | 'type-word'
+  | 'scramble'
   | 'complete';
 
 export interface QuizOption {
@@ -33,6 +34,8 @@ export interface Slide {
   uppercase?: string;
   caseChoices?: string[];
   correctCase?: string;
+  scrambledWords?: string[];
+  correctSentence?: string;
 }
 
 export interface LetterModule {
@@ -89,6 +92,7 @@ const makeModule = (
 
   const typeWordIdx = vocabWords.findIndex(w => w.toLowerCase() === typeWord.toLowerCase());
   const typeWordEmoji = typeWordIdx >= 0 ? vocabEmojis[typeWordIdx] : '📝';
+  const scrambledWords = sentence.split(' ');
 
   return {
     letter, attribute, sentence, color, lightColor, darkColor, emoji,
@@ -101,7 +105,8 @@ const makeModule = (
       { id: n + q + 3, type: 'quiz-yesno', question: 'Do these words begin with the same sound?', word1, word2, emoji1, emoji2, yesNoAnswer },
       { id: n + q + 4, type: 'type-word', word: typeWord, emoji: typeWordEmoji, audioUrl: `/audio/${typeWord.toLowerCase()}.m4a` },
       { id: n + q + 5, type: 'quiz-caseMatch', question: `Find the lowercase letter that matches ${letter}`, uppercase: letter, caseChoices, correctCase },
-      { id: n + q + 6, type: 'complete', title: 'Great Job!', subtitle: `Letter ${letter}: Completed!` },
+      { id: n + q + 6, type: 'scramble', question: 'Put the words in the right order!', scrambledWords: [...scrambledWords].sort(() => Math.random() - 0.5), correctSentence: sentence },
+      { id: n + q + 7, type: 'complete', title: 'Great Job!', subtitle: `Letter ${letter}: Completed!` },
     ],
   };
 };
