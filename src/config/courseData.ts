@@ -136,7 +136,7 @@ export const MODULES: LetterModule[] = [
       lc(7, 'Dress', ['d', 'b', 'p', 'q'], 'd'),
       yn(8, SAME, 'Drop', 'Tree', '💧', '🌳', false),
       qc(9, 'Which word starts with D?', [{ word: 'Dinosaur', emoji: '🦕', isCorrect: true }, { word: 'Doll', emoji: '🪆', isCorrect: true }, { word: 'Tiger', emoji: '🐯', isCorrect: false }]),
-      lc(10, 'Dig', ['d', 'b', 'p', 'q'], 'd'),
+      lc(10, 'Dot', ['d', 'b', 'p', 'q'], 'd'),
       tw(11, 'Door', '🚪'),
       cm(12, 'D', ['d', 'b', 'p', 'q'], 'd'),
       sr(13, 'God is our deliverer. He will bring us out of trouble.'),
