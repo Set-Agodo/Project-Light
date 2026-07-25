@@ -5,6 +5,25 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 interface Props { question: string; word1: string; word2: string; emoji1: string; emoji2: string; yesNoAnswer: boolean; color: string; onCorrect: () => void; }
 
+function WordCard({ word, emoji }: { word: string; emoji: string }) {
+  const [imgError, setImgError] = useState(false);
+  const src = `/images/${word.toLowerCase().replace(/ /g, '-')}.jpg`;
+  return (
+    <div className="card flex-1 bg-base-100 border border-base-200 shadow-sm">
+      <div className="card-body items-center py-3 gap-2">
+        <div className="w-20 h-20 rounded-xl overflow-hidden flex items-center justify-center bg-base-200/60">
+          {!imgError ? (
+            <img src={src} alt={word} onError={() => setImgError(true)} className="w-full h-full object-cover" />
+          ) : (
+            <span className="text-4xl">{emoji}</span>
+          )}
+        </div>
+        <span className="text-sm font-black text-base-content">{word}</span>
+      </div>
+    </div>
+  );
+}
+
 export default function QuizYesNoSlide({ question, word1, word2, emoji1, emoji2, yesNoAnswer, color, onCorrect }: Props) {
   const [answered, setAnswered] = useState<boolean | null>(null);
 
@@ -26,26 +45,16 @@ export default function QuizYesNoSlide({ question, word1, word2, emoji1, emoji2,
   const correct = answered === yesNoAnswer;
 
   return (
-    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col items-center h-full gap-6 px-4 pt-4">
+    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col items-center h-full gap-5 px-4 pt-4">
       <div className="text-center">
         <span className="text-xs font-black text-base-content/40 uppercase tracking-widest">Sound Check</span>
         <h2 className="text-base font-black text-base-content mt-1 max-w-xs">{question}</h2>
       </div>
 
       <div className="flex items-center gap-4 w-full max-w-xs">
-        <div className="card flex-1 bg-base-100 border border-base-200 shadow-sm">
-          <div className="card-body items-center py-4 gap-2">
-            <span className="text-5xl">{emoji1}</span>
-            <span className="text-base font-black text-base-content">{word1}</span>
-          </div>
-        </div>
+        <WordCard word={word1} emoji={emoji1} />
         <span className="text-2xl font-black text-base-content/20">&</span>
-        <div className="card flex-1 bg-base-100 border border-base-200 shadow-sm">
-          <div className="card-body items-center py-4 gap-2">
-            <span className="text-5xl">{emoji2}</span>
-            <span className="text-base font-black text-base-content">{word2}</span>
-          </div>
-        </div>
+        <WordCard word={word2} emoji={emoji2} />
       </div>
 
       <div className="flex gap-4 w-full max-w-xs">
