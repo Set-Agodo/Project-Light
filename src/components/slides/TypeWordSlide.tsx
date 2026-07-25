@@ -23,21 +23,26 @@ export default function TypeWordSlide({ word, emoji, color, letter, onCorrect }:
   const [imgError, setImgError] = useState(false);
   const [playing, setPlaying] = useState(false);
 
-  const imageUrl = `/images/${word.toLowerCase()}.jpg`;
-  const audioUrl = `/audio/${word.toLowerCase()}.m4a`;
+  const wordSlug = word.toLowerCase().replace(/ /g, '-');
+  const imageUrl = `/images/${wordSlug}.jpg`;
 
-  // Auto-play the word when slide appears
-  useEffect(() => {
-    const audio = new Audio(audioUrl);
-    audio.play().catch(() => {});
-  }, [audioUrl]);
+  const playWordAudio = (onEnd?: () => void) => {
+    const mp3 = new Audio(`/audio/${wordSlug}.mp3`);
+    mp3.play()
+      .then(() => { if (onEnd) mp3.onended = onEnd; })
+      .catch(() => {
+        const m4a = new Audio(`/audio/${wordSlug}.m4a`);
+        m4a.play().catch(() => {});
+        if (onEnd) m4a.onended = onEnd;
+      });
+  };
+
+  useEffect(() => { playWordAudio(); }, [wordSlug]);
 
   const playWord = () => {
     setPlaying(true);
-    const audio = new Audio(audioUrl);
-    audio.play().catch(() => {});
-    audio.onended = () => setPlaying(false);
-    setTimeout(() => setPlaying(false), 2000);
+    playWordAudio(() => setPlaying(false));
+    setTimeout(() => setPlaying(false), 3000);
   };
 
   const addLetter = (letter: string, idx: number) => {

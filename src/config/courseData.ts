@@ -54,7 +54,7 @@ export interface LetterModule {
 }
 
 const w = (letter: string) => ({ id: 1, type: 'welcome' as SlideType, title: `Letter ${letter}${letter.toLowerCase()}`, subtitle: 'Who God Is' });
-const ph = (letter: string) => ({ id: 2, type: 'phonetic' as SlideType, letterPair: `${letter}${letter.toLowerCase()}`, audioUrl: `/audio/${letter.toLowerCase()}_sound.m4a` });
+const ph = (letter: string) => ({ id: 2, type: 'phonetic' as SlideType, letterPair: `${letter}${letter.toLowerCase()}`, audioUrl: `/audio/${letter.toLowerCase()}_sound.mp3` });
 const v = (id: number, word: string, emoji: string) => ({ id, type: 'vocab' as SlideType, word, emoji, audioUrl: `/audio/${word.toLowerCase().replace(/ /g, '-')}.m4a` });
 const qc = (id: number, question: string, options: QuizOption[]) => ({ id, type: 'quiz-choice' as SlideType, question, options });
 const yn = (id: number, question: string, word1: string, word2: string, emoji1: string, emoji2: string, yesNoAnswer: boolean) => ({ id, type: 'quiz-yesno' as SlideType, question, word1, word2, emoji1, emoji2, yesNoAnswer });

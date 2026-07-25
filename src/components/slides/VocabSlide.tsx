@@ -16,14 +16,20 @@ export default function VocabSlide({ word, emoji, audioUrl, color, letter, isFir
     audio.play().catch(() => {});
   }, [isFirstVocab]);
 
-  const imageUrl = `/images/${word.toLowerCase()}.jpg`;
+  const wordSlug = word.toLowerCase().replace(/ /g, '-');
+  const imageUrl = `/images/${wordSlug}.jpg`;
 
   const playAudio = () => {
     setPlaying(true);
-    const audio = new Audio(audioUrl);
-    audio.play().catch(() => {});
-    audio.onended = () => setPlaying(false);
-    setTimeout(() => setPlaying(false), 2000);
+    const mp3 = new Audio(`/audio/${wordSlug}.mp3`);
+    mp3.play()
+      .then(() => { mp3.onended = () => setPlaying(false); })
+      .catch(() => {
+        const m4a = new Audio(`/audio/${wordSlug}.m4a`);
+        m4a.play().catch(() => {});
+        m4a.onended = () => setPlaying(false);
+      });
+    setTimeout(() => setPlaying(false), 3000);
   };
 
   return (
