@@ -230,23 +230,6 @@ export default function HomeClient() {
         }}>
           © Project Light · Literacy for Life Transformation
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', gap: 20, marginTop: 6 }}>
-          {[
-            { href: '/about', label: 'About' },
-            { href: '/contact', label: 'Contact' },
-            { href: '/sight-words', label: 'Sight Words' },
-          ].map(({ href, label }) => (
-            <Link key={href} href={href} style={{
-              color: 'rgba(245,232,200,0.45)',
-              fontSize: 11,
-              fontWeight: 700,
-              textDecoration: 'none',
-              fontFamily: 'var(--font-poppins), Poppins, sans-serif',
-              letterSpacing: '0.05em',
-              textTransform: 'uppercase',
-            }}>{label}</Link>
-          ))}
-        </div>
       </div>
 
     </div>
