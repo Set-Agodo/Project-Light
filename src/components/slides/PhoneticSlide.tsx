@@ -41,6 +41,7 @@ export default function PhoneticSlide({ letterPair, audioUrl, color }: Props) {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={playAudio}
+        aria-label={playing ? `Playing sound for ${letterPair}` : `Tap to hear the sound of ${letterPair}`}
         className={`btn btn-lg text-white font-black shadow-lg border-0 gap-3 ${playing ? 'opacity-80' : ''}`}
         style={{ background: `linear-gradient(135deg, ${color}ff, ${color}bb)` }}
       >

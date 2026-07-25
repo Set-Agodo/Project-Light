@@ -14,7 +14,7 @@ export default function AlphabetGrid() {
           onClick={() => router.push(`/module/${mod.letter}`)}
           className="letter-btn relative flex flex-col items-center justify-center rounded-3xl aspect-square shadow-md border-2 border-white/60 cursor-pointer group overflow-hidden"
           style={{ background: `linear-gradient(135deg, ${mod.color}ee, ${mod.color}bb)` }}
-          title={`God is ${mod.attribute}`}
+          aria-label={`Letter ${mod.letter} — God is ${mod.attribute}`}
         >
           <span className="text-2xl sm:text-3xl font-black text-white drop-shadow-sm leading-none">
             {mod.letter}

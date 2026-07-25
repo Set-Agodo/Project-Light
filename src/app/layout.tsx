@@ -22,8 +22,25 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: 'Project Light — Literacy for Life Transformation',
-  description: 'Who God Is: An interactive literacy and pre-reading program built on Scripture.',
+  metadataBase: new URL('https://project-light.vercel.app'),
+  title: {
+    default: 'Project Light — Literacy for Life Transformation',
+    template: '%s | Project Light',
+  },
+  description: 'Interactive pre-reading and literacy program built on Scripture. Learn every letter A to Z through phonics, vocabulary, and interactive quizzes.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Project Light',
+    title: 'Project Light — Literacy for Life Transformation',
+    description: 'A scripture-based A–Z literacy program for pre-readers, early learners, and ESL students. Each letter introduces an attribute of God.',
+    images: [{ url: '/images/logo.jpg', alt: 'Project Light — Literacy for Life Transformation' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Project Light — Literacy for Life Transformation',
+    description: 'A scripture-based A–Z literacy program for pre-readers, early learners, and ESL students.',
+    images: ['/images/logo.jpg'],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

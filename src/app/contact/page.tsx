@@ -1,3 +1,13 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+  description: 'Get in touch with Project Light — the scripture-based literacy program for pre-readers, early learners, and ESL students.',
+  openGraph: {
+    title: 'Contact Project Light',
+    description: 'Get in touch with the Project Light literacy organization.',
+  },
+};
 
 const contactItems = [
   { icon: '📬', color: '#FF6B6B', label: 'Mailing Address', value: 'PO Box\nNorfolk, VA' },

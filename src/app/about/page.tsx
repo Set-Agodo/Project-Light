@@ -1,3 +1,14 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About',
+  description: 'Learn how Project Light uses scripture-based phonological awareness to help pre-readers, early learners, and ESL students build lasting reading foundations.',
+  openGraph: {
+    title: 'About Project Light',
+    description: 'Learn how Project Light uses scripture-based phonological awareness to help pre-readers, early learners, and ESL students build lasting reading foundations.',
+  },
+};
+
 export default function AboutPage() {
   const sections = [
     { icon: '📚', color: '#7c3aed', title: 'A. What does this program do?', body: `Project Light: Literacy for Life Transformation is an interactive pre-reading and literacy development program built on a scripture-based curriculum titled "Who God Is." It is specifically designed to help pre-readers, early learners, and English as a Second Language (ESL) students develop foundational phonological awareness while exploring the character of God through every letter of the alphabet.` },

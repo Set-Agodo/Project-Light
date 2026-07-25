@@ -192,10 +192,11 @@ export default function CarouselGallery() {
       <div className="flex items-center gap-5 mt-7 z-10">
         <motion.button
           onClick={prev} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
+          aria-label="Previous letter"
           className="btn btn-circle"
           style={{ background: 'rgba(255,240,200,0.1)', border: '1px solid rgba(255,240,200,0.22)', color: '#f5e8c8', boxShadow: '0 2px 8px rgba(0,0,0,0.3)' }}
         >
-          <ChevronLeft size={22} />
+          <ChevronLeft size={22} aria-hidden="true" />
         </motion.button>
 
         <div className="flex flex-col items-center gap-2">
@@ -219,10 +220,11 @@ export default function CarouselGallery() {
 
         <motion.button
           onClick={next} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
+          aria-label="Next letter"
           className="btn btn-circle"
           style={{ background: 'rgba(255,240,200,0.1)', border: '1px solid rgba(255,240,200,0.22)', color: '#f5e8c8', boxShadow: '0 2px 8px rgba(0,0,0,0.3)' }}
         >
-          <ChevronRight size={22} />
+          <ChevronRight size={22} aria-hidden="true" />
         </motion.button>
       </div>
     </div>

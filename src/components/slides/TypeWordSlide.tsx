@@ -82,6 +82,7 @@ export default function TypeWordSlide({ word, emoji, color, letter, onCorrect }:
       {/* Picture — tap to hear */}
       <motion.button
         onClick={playWord}
+        aria-label={playing ? `Playing ${word}` : `Tap to hear ${word}`}
         whileTap={{ scale: 0.95 }}
         animate={playing ? { scale: [1, 1.04, 1] } : {}}
         transition={{ repeat: playing ? Infinity : 0, duration: 0.5 }}

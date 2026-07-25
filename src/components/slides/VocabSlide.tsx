@@ -44,6 +44,7 @@ export default function VocabSlide({ word, emoji, audioUrl, color, letter, isFir
 
       <motion.button
         onClick={playAudio}
+        aria-label={playing ? `Playing ${word}` : `Tap to hear ${word}`}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
         animate={playing ? { scale: [1, 1.04, 1] } : {}}

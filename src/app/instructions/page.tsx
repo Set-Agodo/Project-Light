@@ -1,3 +1,14 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'How To Use',
+  description: 'Step-by-step guide for using Project Light: navigating lessons, tapping pictures to hear words, answering quiz questions, building sentences, and celebrating completion.',
+  openGraph: {
+    title: 'How To Use Project Light',
+    description: 'Step-by-step guide for using Project Light lessons for learners, parents, and teachers.',
+  },
+};
+
 export default function InstructionsPage() {
   const steps = [
     { num: '1', icon: '🔤', color: '#FF6B6B', title: 'Select a Letter', body: "From the home screen, tap any letter card on the A–Z carousel to open that letter's learning module." },
