@@ -227,7 +227,7 @@ export const MODULES: LetterModule[] = [
       w('I'), ph('I'),
       v(3, 'Inch', '📏'), v(4, 'Igloo', '🏔️'), v(5, 'Ice Cream', '🍦'),
       yn(6, SAME, 'Island', 'Inch', '🏝️', '📏', true),
-      qc(7, 'Which word starts with I?', [{ word: 'Iron', emoji: '🔩', isCorrect: true }, { word: 'Eye', emoji: '👁️', isCorrect: true }, { word: 'Vegetables', emoji: '🥦', isCorrect: false }]),
+      qc(7, 'Which word starts with I?', [{ word: 'Iron', emoji: '🔩', isCorrect: true }, { word: 'Eye', emoji: '👁️', isCorrect: false }, { word: 'Vegetables', emoji: '🥦', isCorrect: false }]),
       cm(8, 'I', ['i', 'l', 'j', 't'], 'i'),
       sr(9, 'God is I am. He is who he says he is.'),
       sc(9, 'God is I am. He is who he says he is.'),
