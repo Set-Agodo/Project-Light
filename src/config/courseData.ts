@@ -490,7 +490,7 @@ export const MODULES: LetterModule[] = [
       w('W'), ph('W'),
       v(3, 'Woman', '👩'), v(4, 'Worm', '🪱'), v(5, 'Wall', '🧱'),
       lc(6, 'Win', ['w', 'm', 'v', 'n'], 'w'),
-      yn(7, SAME, 'Woman', 'Worm', '👩', '🪱', true),
+      yn(7, SAME, 'Wolf', 'Walk', '🐺', '🚶', true),
       tw(8, 'Woman', '👩'),
       yn(9, DIFF, 'Walk', 'Talk', '🚶', '💬', false),
       cm(10, 'W', ['w', 'm', 'v', 'n'], 'w'),
