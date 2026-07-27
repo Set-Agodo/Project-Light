@@ -470,7 +470,7 @@ export const MODULES: LetterModule[] = [
     slides: [
       w('V'), ph('V'),
       v(3, 'Van', '🚐'), v(4, 'Violin', '🎻'), v(5, 'Vegetables', '🥦'),
-      yn(6, SAME, 'Van', 'Vine', '🚐', '🌿', true),
+      yn(6, SAME, 'Feet', 'Vase', '🦶', '🏺', false),
       yn(7, SAME, 'Vest', 'House', '🦺', '🏠', false),
       lc(8, 'Vine', ['v', 'u', 'w', 'y'], 'v'),
       tw(9, 'Van', '🚐'),
