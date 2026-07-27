@@ -12,9 +12,10 @@ export default function PhoneticSlide({ letterPair, audioUrl, color }: Props) {
   const playAudio = () => {
     setPlaying(true);
     const audio = new Audio(audioUrl);
-    audio.play().catch(() => {});
     audio.onended = () => setPlaying(false);
-    setTimeout(() => setPlaying(false), 2000);
+    audio.onerror = () => setPlaying(false);
+    audio.play().catch(() => setPlaying(false));
+    setTimeout(() => setPlaying(false), 3000);
   };
 
   return (

@@ -21,15 +21,20 @@ export default function VocabSlide({ word, emoji, audioUrl, color, letter, isFir
 
   const playAudio = () => {
     setPlaying(true);
+    let fallbackUsed = false;
     const mp3 = new Audio(`/audio/${wordSlug}.mp3`);
-    mp3.play()
-      .then(() => { mp3.onended = () => setPlaying(false); })
-      .catch(() => {
-        const m4a = new Audio(`/audio/${wordSlug}.m4a`);
-        m4a.play().catch(() => {});
-        m4a.onended = () => setPlaying(false);
-      });
-    setTimeout(() => setPlaying(false), 3000);
+    mp3.onended = () => setPlaying(false);
+    const tryM4a = () => {
+      if (fallbackUsed) return;
+      fallbackUsed = true;
+      const m4a = new Audio(`/audio/${wordSlug}.m4a`);
+      m4a.onended = () => setPlaying(false);
+      m4a.onerror = () => setPlaying(false);
+      m4a.play().catch(() => setPlaying(false));
+    };
+    mp3.onerror = tryM4a;
+    mp3.play().catch(tryM4a);
+    setTimeout(() => setPlaying(false), 5000);
   };
 
   return (

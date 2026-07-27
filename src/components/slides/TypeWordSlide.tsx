@@ -27,14 +27,18 @@ export default function TypeWordSlide({ word, emoji, color, letter, onCorrect }:
   const imageUrl = `/images/${wordSlug}.jpg`;
 
   const playWordAudio = (onEnd?: () => void) => {
+    let fallbackUsed = false;
     const mp3 = new Audio(`/audio/${wordSlug}.mp3`);
-    mp3.play()
-      .then(() => { if (onEnd) mp3.onended = onEnd; })
-      .catch(() => {
-        const m4a = new Audio(`/audio/${wordSlug}.m4a`);
-        m4a.play().catch(() => {});
-        if (onEnd) m4a.onended = onEnd;
-      });
+    if (onEnd) mp3.onended = onEnd;
+    const tryM4a = () => {
+      if (fallbackUsed) return;
+      fallbackUsed = true;
+      const m4a = new Audio(`/audio/${wordSlug}.m4a`);
+      if (onEnd) { m4a.onended = onEnd; m4a.onerror = onEnd; }
+      m4a.play().catch(() => onEnd?.());
+    };
+    mp3.onerror = tryM4a;
+    mp3.play().catch(tryM4a);
   };
 
   useEffect(() => { playWordAudio(); }, [wordSlug]);
