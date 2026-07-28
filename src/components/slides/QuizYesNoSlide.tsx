@@ -2,12 +2,36 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Volume2 } from 'lucide-react';
 
 interface Props { question: string; word1: string; word2: string; emoji1: string; emoji2: string; yesNoAnswer: boolean; color: string; onCorrect: () => void; }
 
 function WordCard({ word, emoji }: { word: string; emoji: string }) {
   const [imgError, setImgError] = useState(false);
-  const src = `/images/${word.toLowerCase().replace(/ /g, '-')}.jpg`;
+  const [playing, setPlaying] = useState(false);
+  const slug = word.toLowerCase().replace(/ /g, '-');
+  const src = `/images/${slug}.jpg`;
+
+  const playAudio = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (playing) return;
+    setPlaying(true);
+    let fallbackUsed = false;
+    const mp3 = new Audio(`/audio/${slug}.mp3`);
+    mp3.onended = () => setPlaying(false);
+    const tryM4a = () => {
+      if (fallbackUsed) return;
+      fallbackUsed = true;
+      const m4a = new Audio(`/audio/${slug}.m4a`);
+      m4a.onended = () => setPlaying(false);
+      m4a.onerror = () => setPlaying(false);
+      m4a.play().catch(() => setPlaying(false));
+    };
+    mp3.onerror = tryM4a;
+    mp3.play().catch(tryM4a);
+    setTimeout(() => setPlaying(false), 5000);
+  };
+
   return (
     <div className="card flex-1 bg-base-100 border border-base-200 shadow-sm">
       <div className="card-body items-center py-3 gap-2">
@@ -19,6 +43,14 @@ function WordCard({ word, emoji }: { word: string; emoji: string }) {
           )}
         </div>
         <span className="text-sm font-black text-base-content">{word}</span>
+        <button
+          onClick={playAudio}
+          aria-label={`Hear ${word}`}
+          className={`btn btn-xs btn-ghost gap-1 ${playing ? 'opacity-60' : ''}`}
+        >
+          <Volume2 size={13} />
+          {playing ? 'Playing…' : 'Hear it'}
+        </button>
       </div>
     </div>
   );
