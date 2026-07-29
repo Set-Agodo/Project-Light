@@ -10,12 +10,12 @@ export default function VocabSlide({ word, emoji, audioUrl, color, letter, isFir
   const [playing, setPlaying] = useState(false);
   const [imgError, setImgError] = useState(false);
 
+  const wordSlug = word.toLowerCase().replace(/ /g, '-');
+
   useEffect(() => {
     const audio = new Audio('/audio/phrases/click_the_pic.m4a');
     audio.play().catch(() => {});
   }, [wordSlug]);
-
-  const wordSlug = word.toLowerCase().replace(/ /g, '-');
   const imageUrl = `/images/${wordSlug}.jpg`;
 
   const playAudio = () => {
