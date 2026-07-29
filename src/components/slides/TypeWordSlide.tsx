@@ -41,7 +41,12 @@ export default function TypeWordSlide({ word, emoji, color, letter, onCorrect }:
     mp3.play().catch(tryM4a);
   };
 
-  useEffect(() => { playWordAudio(); }, [wordSlug]);
+  useEffect(() => {
+    const phrase = new Audio('/audio/phrases/type_the_word.m4a');
+    phrase.onended = () => playWordAudio();
+    phrase.onerror = () => playWordAudio();
+    phrase.play().catch(() => playWordAudio());
+  }, [wordSlug]);
 
   const playWord = () => {
     setPlaying(true);

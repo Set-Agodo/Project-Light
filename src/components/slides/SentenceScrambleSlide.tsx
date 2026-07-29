@@ -3,7 +3,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-interface Props { scrambledWords: string[]; correctSentence: string; color: string; onCorrect: () => void; }
+interface Props { scrambledWords: string[]; correctSentence: string; color: string; letter: string; onCorrect: () => void; }
 
 function shuffleArray<T>(arr: T[]): T[] {
   const copy = [...arr];
@@ -14,14 +14,14 @@ function shuffleArray<T>(arr: T[]): T[] {
   return copy;
 }
 
-export default function SentenceScrambleSlide({ scrambledWords, correctSentence, color, onCorrect }: Props) {
+export default function SentenceScrambleSlide({ scrambledWords, correctSentence, color, letter, onCorrect }: Props) {
   const shuffled = useMemo(() => shuffleArray(scrambledWords), [scrambledWords]);
   const [available, setAvailable] = useState<string[]>(shuffled);
 
   useEffect(() => {
-    const audio = new Audio('/audio/phrases/scramble.m4a');
+    const audio = new Audio(`/audio/sentences/${letter.toLowerCase()}.m4a`);
     audio.play().catch(() => {});
-  }, []);
+  }, [letter]);
   const [selected, setSelected] = useState<string[]>([]);
   const [wrong, setWrong] = useState(false);
 

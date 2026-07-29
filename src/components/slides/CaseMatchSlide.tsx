@@ -10,7 +10,7 @@ export default function CaseMatchSlide({ uppercase, caseChoices, correctCase, co
   const [shake, setShake] = useState<string | null>(null);
 
   useEffect(() => {
-    const audio = new Audio('/audio/phrases/casematch.m4a');
+    const audio = new Audio('/audio/phrases/choose_lowercase.m4a');
     audio.play().catch(() => {});
   }, []);
 
