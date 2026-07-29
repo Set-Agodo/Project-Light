@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Volume2 } from 'lucide-react';
 
@@ -8,6 +8,8 @@ interface Props { sentence: string; color: string; letter: string; }
 
 export default function SentenceReadSlide({ sentence, color, letter }: Props) {
   const [playing, setPlaying] = useState(false);
+
+  useEffect(() => { playSentence(); }, [letter]);
 
   const playSentence = () => {
     if (playing) return;
