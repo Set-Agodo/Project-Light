@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, XCircle } from 'lucide-react';
 import type { QuizOption } from '@/config/courseData';
 
-interface Props { question: string; options: QuizOption[]; color: string; onCorrect: () => void; }
+interface Props { question: string; options: QuizOption[]; color: string; letter: string; onCorrect: () => void; }
 
 function OptionCard({ opt, selected, revealCorrects, shake, color, onSelect }: {
   opt: QuizOption;
@@ -56,14 +56,14 @@ function OptionCard({ opt, selected, revealCorrects, shake, color, onSelect }: {
   );
 }
 
-export default function QuizChoiceSlide({ question, options, color, onCorrect }: Props) {
+export default function QuizChoiceSlide({ question, options, color, letter, onCorrect }: Props) {
   const [selected, setSelected] = useState<string | null>(null);
   const [shake, setShake] = useState<string | null>(null);
 
   useEffect(() => {
-    const audio = new Audio('/audio/phrases/quiz_choice.m4a');
+    const audio = new Audio(`/audio/phrases/which_word_${letter.toLowerCase()}.m4a`);
     audio.play().catch(() => {});
-  }, []);
+  }, [letter]);
 
   const selectedOpt = options.find(o => o.word === selected);
   const revealCorrects = selectedOpt?.isCorrect ?? false;

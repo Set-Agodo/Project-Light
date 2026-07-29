@@ -52,7 +52,7 @@ export default function ModulePage({ params }: { params: Promise<{ letter: strin
       case 'welcome': return <WelcomeSlide title={slide.title!} subtitle={slide.subtitle!} letter={mod.letter} attribute={mod.attribute} color={mod.color} onStart={goNext} />;
       case 'phonetic': return <PhoneticSlide letterPair={slide.letterPair!} audioUrl={slide.audioUrl!} color={mod.color} />;
       case 'vocab': return <VocabSlide word={slide.word!} emoji={slide.emoji!} audioUrl={slide.audioUrl!} color={mod.color} letter={mod.letter} isFirstVocab={currentSlide === slides.findIndex(s => s.type === 'vocab')} />;
-      case 'quiz-choice': return <QuizChoiceSlide question={slide.question!} options={slide.options!} color={mod.color} onCorrect={handleQuizCorrect} />;
+      case 'quiz-choice': return <QuizChoiceSlide question={slide.question!} options={slide.options!} color={mod.color} letter={mod.letter} onCorrect={handleQuizCorrect} />;
       case 'quiz-yesno': return <QuizYesNoSlide question={slide.question!} word1={slide.word1!} word2={slide.word2!} emoji1={slide.emoji1!} emoji2={slide.emoji2!} yesNoAnswer={slide.yesNoAnswer!} color={mod.color} onCorrect={handleQuizCorrect} />;
       case 'quiz-caseMatch': return <CaseMatchSlide uppercase={slide.uppercase!} caseChoices={slide.caseChoices!} correctCase={slide.correctCase!} color={mod.color} onCorrect={handleQuizCorrect} />;
       case 'type-word': return <TypeWordSlide word={slide.word!} emoji={slide.emoji!} color={mod.color} letter={mod.letter} onCorrect={handleQuizCorrect} />;
