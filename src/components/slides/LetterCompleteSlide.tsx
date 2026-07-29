@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface Props {
@@ -15,6 +15,11 @@ export default function LetterCompleteSlide({ completeWord, caseChoices, correct
   const [selected, setSelected] = useState<string | null>(null);
   const [shake, setShake] = useState<string | null>(null);
   const [imgError, setImgError] = useState(false);
+
+  useEffect(() => {
+    const audio = new Audio('/audio/phrases/complete_the_word.m4a');
+    audio.play().catch(() => {});
+  }, []);
 
   const wordLower = completeWord.toLowerCase().replace(' ', '-');
   // Find position of the missing letter (first occurrence, case-insensitive)
