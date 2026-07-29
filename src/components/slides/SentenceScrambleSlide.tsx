@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Volume2 } from 'lucide-react';
 
 interface Props { scrambledWords: string[]; correctSentence: string; color: string; letter: string; onCorrect: () => void; }
 
@@ -17,13 +18,21 @@ function shuffleArray<T>(arr: T[]): T[] {
 export default function SentenceScrambleSlide({ scrambledWords, correctSentence, color, letter, onCorrect }: Props) {
   const shuffled = useMemo(() => shuffleArray(scrambledWords), [scrambledWords]);
   const [available, setAvailable] = useState<string[]>(shuffled);
-
-  useEffect(() => {
-    const audio = new Audio(`/audio/sentences/${letter.toLowerCase()}.m4a`);
-    audio.play().catch(() => {});
-  }, [letter]);
+  const [playing, setPlaying] = useState(false);
   const [selected, setSelected] = useState<string[]>([]);
   const [wrong, setWrong] = useState(false);
+
+  const playSentence = () => {
+    if (playing) return;
+    setPlaying(true);
+    const audio = new Audio(`/audio/sentences/${letter.toLowerCase()}.m4a`);
+    audio.onended = () => setPlaying(false);
+    audio.onerror = () => setPlaying(false);
+    audio.play().catch(() => setPlaying(false));
+    setTimeout(() => setPlaying(false), 8000);
+  };
+
+  useEffect(() => { playSentence(); }, [letter]);
 
   const addWord = (word: string, idx: number) => {
     const newSelected = [...selected, word];
@@ -51,6 +60,15 @@ export default function SentenceScrambleSlide({ scrambledWords, correctSentence,
       <div className="text-center w-full">
         <span className="text-xs font-black text-base-content/40 uppercase tracking-widest">Sentence Scramble</span>
         <h2 className="text-base font-black text-base-content mt-1">Put the words in the right order!</h2>
+        <button
+          onClick={playSentence}
+          className={`btn btn-xs gap-1 text-white border-0 mt-2 ${playing ? 'opacity-70' : ''}`}
+          style={{ background: color }}
+          aria-label="Hear the sentence again"
+        >
+          <Volume2 size={12} />
+          {playing ? 'Playing…' : 'Hear the sentence'}
+        </button>
       </div>
 
       {/* Build zone */}
