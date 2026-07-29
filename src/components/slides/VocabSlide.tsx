@@ -11,10 +11,9 @@ export default function VocabSlide({ word, emoji, audioUrl, color, letter, isFir
   const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
-    if (!isFirstVocab) return;
-    const audio = new Audio('/audio/phrases/vocab.m4a');
+    const audio = new Audio('/audio/phrases/click_the_pic.m4a');
     audio.play().catch(() => {});
-  }, [isFirstVocab]);
+  }, [wordSlug]);
 
   const wordSlug = word.toLowerCase().replace(/ /g, '-');
   const imageUrl = `/images/${wordSlug}.jpg`;
@@ -44,7 +43,7 @@ export default function VocabSlide({ word, emoji, audioUrl, color, letter, isFir
       className="flex flex-col items-center justify-center text-center h-full gap-6 px-6"
     >
       <p className="text-xs font-black text-base-content/40 uppercase tracking-widest">
-        Words that start with {letter}
+        Click the picture to hear the word
       </p>
 
       <motion.button
