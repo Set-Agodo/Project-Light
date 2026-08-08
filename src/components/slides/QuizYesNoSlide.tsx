@@ -6,7 +6,9 @@ import { Volume2 } from 'lucide-react';
 
 interface Props { question: string; word1: string; word2: string; emoji1: string; emoji2: string; yesNoAnswer: boolean; color: string; onCorrect: () => void; }
 
-function WordCard({ word, emoji }: { word: string; emoji: string }) {
+const IS_SAME_OR_DIFF = (q: string) => q.toLowerCase().includes('same or different');
+
+function WordCard({ word, emoji, hidden }: { word: string; emoji: string; hidden?: boolean }) {
   const [imgError, setImgError] = useState(false);
   const [playing, setPlaying] = useState(false);
   const slug = word.toLowerCase().replace(/ /g, '-');
@@ -31,6 +33,19 @@ function WordCard({ word, emoji }: { word: string; emoji: string }) {
     mp3.play().catch(tryM4a);
     setTimeout(() => setPlaying(false), 5000);
   };
+
+  if (hidden) {
+    return (
+      <div className="card flex-1 bg-base-100 border border-base-200 shadow-sm">
+        <div className="card-body items-center py-3 gap-2">
+          <div className="w-20 h-20 rounded-xl bg-base-300/60 flex items-center justify-center">
+            <span className="text-3xl opacity-30">?</span>
+          </div>
+          <span className="text-sm font-black text-base-content/20">• • •</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="card flex-1 bg-base-100 border border-base-200 shadow-sm">
@@ -58,11 +73,28 @@ function WordCard({ word, emoji }: { word: string; emoji: string }) {
 
 export default function QuizYesNoSlide({ question, word1, word2, emoji1, emoji2, yesNoAnswer, color, onCorrect }: Props) {
   const [answered, setAnswered] = useState<boolean | null>(null);
+  const isSameOrDiff = IS_SAME_OR_DIFF(question);
 
   useEffect(() => {
-    const audio = new Audio('/audio/phrases/quiz_yesno.m4a');
+    const phrase = isSameOrDiff ? '/audio/phrases/are_the_words.m4a' : '/audio/phrases/quiz_yesno.m4a';
+    const audio = new Audio(phrase);
+
+    if (isSameOrDiff) {
+      // Play the instruction phrase, then play both words sequentially
+      audio.onended = () => {
+        const a1 = new Audio(`/audio/${word1.toLowerCase().replace(/ /g, '-')}.m4a`);
+        a1.onended = () => {
+          setTimeout(() => {
+            const a2 = new Audio(`/audio/${word2.toLowerCase().replace(/ /g, '-')}.m4a`);
+            a2.play().catch(() => {});
+          }, 400);
+        };
+        a1.play().catch(() => {});
+      };
+    }
+
     audio.play().catch(() => {});
-  }, []);
+  }, [word1, word2]);
 
   const handleAnswer = (answer: boolean) => {
     if (answered !== null) return;
@@ -75,18 +107,21 @@ export default function QuizYesNoSlide({ question, word1, word2, emoji1, emoji2,
   };
 
   const correct = answered === yesNoAnswer;
+  const wordsHidden = isSameOrDiff && answered === null;
 
   return (
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col items-center h-full gap-5 px-4 pt-4">
       <div className="text-center">
-        <span className="text-xs font-black text-base-content/40 uppercase tracking-widest">Sound Check</span>
+        <span className="text-xs font-black text-base-content/40 uppercase tracking-widest">
+          {isSameOrDiff ? 'Listening' : 'Sound Check'}
+        </span>
         <h2 className="text-base font-black text-base-content mt-1 max-w-xs">{question}</h2>
       </div>
 
       <div className="flex items-center gap-4 w-full max-w-xs">
-        <WordCard word={word1} emoji={emoji1} />
+        <WordCard word={word1} emoji={emoji1} hidden={wordsHidden} />
         <span className="text-2xl font-black text-base-content/20">&</span>
-        <WordCard word={word2} emoji={emoji2} />
+        <WordCard word={word2} emoji={emoji2} hidden={wordsHidden} />
       </div>
 
       <div className="flex gap-4 w-full max-w-xs">
