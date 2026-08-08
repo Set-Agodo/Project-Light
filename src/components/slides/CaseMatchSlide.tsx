@@ -29,7 +29,7 @@ export default function CaseMatchSlide({ uppercase, caseChoices, correctCase, co
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col items-center h-full gap-6 px-4 pt-4">
       <div className="text-center">
         <span className="text-xs font-black text-base-content/40 uppercase tracking-widest">Case Matching</span>
-        <h2 className="text-base font-black text-base-content mt-1">Find the lowercase letter that matches</h2>
+        <h2 className="text-base font-black text-base-content mt-1">Choose the lowercase letter</h2>
       </div>
 
       <motion.div
