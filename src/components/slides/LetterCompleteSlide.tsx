@@ -15,13 +15,33 @@ export default function LetterCompleteSlide({ completeWord, caseChoices, correct
   const [selected, setSelected] = useState<string | null>(null);
   const [shake, setShake] = useState<string | null>(null);
   const [imgError, setImgError] = useState(false);
+  const [playing, setPlaying] = useState(false);
+
+  const wordLower = completeWord.toLowerCase().replace(' ', '-');
 
   useEffect(() => {
     const audio = new Audio('/audio/phrases/complete_the_word.m4a');
     audio.play().catch(() => {});
   }, []);
 
-  const wordLower = completeWord.toLowerCase().replace(' ', '-');
+  const playWord = () => {
+    if (playing) return;
+    setPlaying(true);
+    let fallbackUsed = false;
+    const mp3 = new Audio(`/audio/${wordLower}.mp3`);
+    mp3.onended = () => setPlaying(false);
+    const tryM4a = () => {
+      if (fallbackUsed) return;
+      fallbackUsed = true;
+      const m4a = new Audio(`/audio/${wordLower}.m4a`);
+      m4a.onended = () => setPlaying(false);
+      m4a.onerror = () => setPlaying(false);
+      m4a.play().catch(() => setPlaying(false));
+    };
+    mp3.onerror = tryM4a;
+    mp3.play().catch(tryM4a);
+    setTimeout(() => setPlaying(false), 5000);
+  };
   // Find position of the missing letter (first occurrence, case-insensitive)
   const missingIdx = completeWord.toLowerCase().indexOf(correctCase.toLowerCase());
 
@@ -62,15 +82,21 @@ export default function LetterCompleteSlide({ completeWord, caseChoices, correct
         })}
       </div>
 
-      {/* Word picture */}
-      <div className="w-28 h-28 rounded-2xl overflow-hidden border-2 flex items-center justify-center"
-        style={{ borderColor: `${color}44`, background: `${color}18` }}>
+      {/* Word picture — tap to hear */}
+      <motion.button
+        onClick={playWord}
+        animate={playing ? { scale: [1, 1.04, 1] } : {}}
+        transition={{ repeat: playing ? Infinity : 0, duration: 0.5 }}
+        aria-label={`Tap to hear ${completeWord}`}
+        className="w-28 h-28 rounded-2xl overflow-hidden border-2 flex items-center justify-center cursor-pointer"
+        style={{ borderColor: `${color}44`, background: `${color}18` }}
+      >
         {!imgError ? (
           <img src={`/images/${wordLower}.jpg`} alt={completeWord} onError={() => setImgError(true)} className="w-full h-full object-cover" />
         ) : (
           <span className="text-5xl font-black" style={{ color }}>{completeWord[0]?.toUpperCase()}</span>
         )}
-      </div>
+      </motion.button>
 
       {/* Letter choices */}
       <div className="flex gap-3 flex-wrap justify-center">
