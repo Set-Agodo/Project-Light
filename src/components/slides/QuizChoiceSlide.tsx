@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle2, XCircle } from 'lucide-react';
+import { CheckCircle2, XCircle, Volume2 } from 'lucide-react';
 import type { QuizOption } from '@/config/courseData';
 
 interface Props { question: string; options: QuizOption[]; color: string; letter: string; onCorrect: () => void; }
@@ -16,10 +16,32 @@ function OptionCard({ opt, selected, revealCorrects, shake, color, onSelect }: {
   onSelect: (opt: QuizOption) => void;
 }) {
   const [imgError, setImgError] = useState(false);
+  const [playing, setPlaying] = useState(false);
   const isSelected = selected === opt.word;
   const showGreen = isSelected ? opt.isCorrect : (revealCorrects && opt.isCorrect);
   const showRed = isSelected && !opt.isCorrect;
   const isShaking = shake === opt.word;
+  const slug = opt.word.toLowerCase().replace(/ /g, '-');
+
+  const playWord = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (playing) return;
+    setPlaying(true);
+    let fallbackUsed = false;
+    const mp3 = new Audio(`/audio/${slug}.mp3`);
+    mp3.onended = () => setPlaying(false);
+    const tryM4a = () => {
+      if (fallbackUsed) return;
+      fallbackUsed = true;
+      const m4a = new Audio(`/audio/${slug}.m4a`);
+      m4a.onended = () => setPlaying(false);
+      m4a.onerror = () => setPlaying(false);
+      m4a.play().catch(() => setPlaying(false));
+    };
+    mp3.onerror = tryM4a;
+    mp3.play().catch(tryM4a);
+    setTimeout(() => setPlaying(false), 5000);
+  };
 
   return (
     <motion.button
@@ -35,7 +57,7 @@ function OptionCard({ opt, selected, revealCorrects, shake, color, onSelect }: {
       <div className="w-16 h-16 rounded-xl overflow-hidden flex items-center justify-center bg-base-200/60">
         {!imgError ? (
           <img
-            src={`/images/${opt.word.toLowerCase()}.jpg`}
+            src={`/images/${slug}.jpg`}
             alt={opt.word}
             onError={() => setImgError(true)}
             className="w-full h-full object-cover"
@@ -45,6 +67,14 @@ function OptionCard({ opt, selected, revealCorrects, shake, color, onSelect }: {
         )}
       </div>
       <span className="text-xs font-black text-base-content leading-tight text-center">{opt.word}</span>
+      <button
+        onClick={playWord}
+        aria-label={`Hear ${opt.word}`}
+        className={`btn btn-xs btn-ghost gap-1 ${playing ? 'opacity-60' : ''}`}
+      >
+        <Volume2 size={11} />
+        {playing ? '…' : 'Hear'}
+      </button>
       <AnimatePresence>
         {(showGreen || showRed) && (
           <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }}>
